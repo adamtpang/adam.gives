@@ -5,391 +5,759 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>the adam.inc menu</title>
 <meta name="description" content="gifts on the house, prices on the menu">
+<link rel="canonical" href="https://adam.gives/">
+<meta name="theme-color" content="#0f2a24" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#071815" media="(prefers-color-scheme: dark)">
 
 <meta property="og:title" content="the adam.inc menu">
 <meta property="og:description" content="gifts on the house, prices on the menu">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://adam.gives/">
+<meta property="og:image" content="https://adam.gives/og.jpg">
 <meta property="og:site_name" content="adam.inc">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="the adam.inc menu">
 <meta name="twitter:description" content="gifts on the house, prices on the menu">
+<meta name="twitter:image" content="https://adam.gives/og.jpg">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='34' r='21' fill='none' stroke='%23b3541e' stroke-width='5'/%3E%3Ccircle cx='32' cy='34' r='9' fill='%23b3541e'/%3E%3Cline x1='8' y1='10' x2='8' y2='26' stroke='%23b3541e' stroke-width='4' stroke-linecap='round'/%3E%3Cline x1='56' y1='10' x2='56' y2='30' stroke='%23b3541e' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='9' y='7' width='46' height='50' rx='5' fill='%23fffdf8' stroke='%230f2a24' stroke-width='4'/%3E%3Cpath d='M19 21h26M19 32h26M19 43h18' stroke='%23c4362f' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --paper: #faf6ef;
-    --paper-edge: #f1e9dc;
-    --ink: #231d17;
-    --ink-soft: #6e6357;
-    --accent: #b3541e;
-    --rule: #d8cbb8;
-    --hover-wash: #f3ead9;
-    --shadow: 0 1px 0 rgba(90, 70, 40, 0.06);
+    --room: #0f2a24;
+    --room-deep: #081b17;
+    --paper: #fffdf8;
+    --paper-soft: #f5f0e6;
+    --ink: #17211d;
+    --ink-soft: #66716a;
+    --tomato: #c4362f;
+    --cobalt: #1f5d7a;
+    --brass: #c89d3f;
+    --line: #d9d0bf;
+    --wash: #f9f4ea;
+    --shadow: 0 24px 70px rgba(4, 18, 15, 0.28);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --paper: #1b1712;
-      --paper-edge: #241f18;
-      --ink: #ede5d8;
-      --ink-soft: #a39683;
-      --accent: #e89050;
-      --rule: #453b2e;
-      --hover-wash: #262019;
-      --shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+      --room: #071815;
+      --room-deep: #04100e;
+      --paper: #171d1a;
+      --paper-soft: #202823;
+      --ink: #f4efe5;
+      --ink-soft: #b8b0a2;
+      --tomato: #f26b5e;
+      --cobalt: #7ab8d6;
+      --brass: #d7b768;
+      --line: #39433d;
+      --wash: #212a25;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
     }
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
   html { scroll-behavior: smooth; }
 
   body {
-    background: var(--paper);
-    background-image: radial-gradient(circle at 50% 0%, var(--paper-edge), var(--paper) 70%);
+    min-height: 100vh;
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      radial-gradient(circle at 18% 0%, rgba(200, 157, 63, 0.24), transparent 35%),
+      var(--room);
+    background-size: 32px 32px, 32px 32px, auto, auto;
     color: var(--ink);
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 16px;
-    line-height: 1.55;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    padding: 2.5rem 1.25rem 3rem;
+    padding: 28px 16px 36px;
   }
 
-  .menu-card {
-    max-width: 40rem;
+  a { color: inherit; }
+
+  .menu-sheet {
+    width: min(100%, 1160px);
     margin: 0 auto;
+    background: var(--paper);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow: var(--shadow);
+    overflow: hidden;
   }
 
-  /* header */
-  header { text-align: center; margin-bottom: 2.75rem; }
+  .cover {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+    min-height: 480px;
+    background:
+      linear-gradient(135deg, rgba(15, 42, 36, 0.06), transparent 45%),
+      var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .cover-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(32px, 5.5vw, 72px);
+  }
+
+  .eyebrow,
+  .section-kicker,
+  .meta-line,
+  .stamp {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .eyebrow {
+    color: var(--tomato);
+  }
 
   .wordmark {
+    margin-top: 14px;
     font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(3.2rem, 7.5vw, 5rem);
     font-weight: 700;
-    font-size: clamp(2.4rem, 8vw, 3.4rem);
-    letter-spacing: -0.02em;
-    line-height: 1.05;
+    letter-spacing: 0;
+    line-height: 0.92;
   }
 
-  .wordmark .dot { color: var(--accent); }
+  .wordmark .dot { color: var(--tomato); }
 
   .tagline {
+    max-width: 13.5em;
+    margin-top: 20px;
     font-family: "Fraunces", Georgia, serif;
-    font-style: italic;
-    font-size: 1.05rem;
-    color: var(--ink);
-    margin-top: 0.9rem;
-    max-width: 30rem;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: clamp(1.35rem, 3vw, 2.2rem);
+    font-weight: 400;
+    line-height: 1.08;
   }
 
   .kitchen-note {
-    margin-top: 0.85rem;
-    font-size: 0.78rem;
-    letter-spacing: 0.02em;
+    max-width: 34rem;
+    margin-top: 24px;
     color: var(--ink-soft);
+    font-size: 0.94rem;
   }
 
-  header::after {
-    content: "";
-    display: block;
-    width: 4rem;
-    height: 2px;
-    background: var(--accent);
-    margin: 1.6rem auto 0;
-    border-radius: 2px;
-  }
-
-  /* sections */
-  section { margin-bottom: 2.75rem; }
-
-  .section-head {
+  .meta-line {
     display: flex;
-    align-items: center;
-    gap: 0.9rem;
-    margin-bottom: 1.4rem;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+    color: var(--cobalt);
   }
 
-  .section-head::before,
-  .section-head::after {
-    content: "";
-    flex: 1;
-    border-top: 1px solid var(--rule);
+  .cover-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 10px;
+    background: var(--room-deep);
   }
 
-  .section-head h2 {
-    font-family: "Inter", sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    white-space: nowrap;
-  }
-
-  .section-note {
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--ink-soft);
-    margin: -0.8rem 0 1.4rem;
-  }
-
-  /* menu rows */
+  .cover-tile,
   .dish {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    padding: 0.85rem 0.75rem;
-    margin: 0 -0.75rem;
-    border-radius: 10px;
     position: relative;
-    transition: background 0.18s ease, transform 0.18s ease;
+    display: block;
+    color: inherit;
+    text-decoration: none;
   }
 
-  .dish + .dish { margin-top: 0.15rem; }
+  .cover-tile {
+    min-height: 214px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #132c27;
+  }
 
-  .dish::before {
-    content: "👉";
+  .cover-tile img,
+  .dish-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    filter: saturate(0.94) contrast(1.03);
+    transform: scale(1.01);
+  }
+
+  .cover-tile::after {
+    content: "";
     position: absolute;
-    left: -1.35rem;
-    top: 0.95rem;
-    font-size: 0.95rem;
-    opacity: 0;
-    transform: translateX(-6px);
-    transition: opacity 0.18s ease, transform 0.18s ease;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 42%, rgba(0, 0, 0, 0.72));
   }
 
-  @media (hover: hover) {
-    .dish:hover { background: var(--hover-wash); transform: translateX(3px); }
-    .dish:hover::before { opacity: 1; transform: translateX(0); }
-    .dish:hover .price { color: var(--accent); }
-    .dish:hover .dish-name { color: var(--accent); }
+  .cover-tile span {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 12px;
+    z-index: 1;
+    color: #fffdf8;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
-  .dish:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-    background: var(--hover-wash);
+  .menu-section {
+    padding: clamp(28px, 6vw, 68px) clamp(18px, 5vw, 64px);
+    border-bottom: 1px solid var(--line);
   }
 
-  .dish-line {
+  .section-title {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 18px;
+    align-items: end;
+    margin-bottom: 26px;
+  }
+
+  .section-kicker { color: var(--tomato); }
+
+  .section-title h2 {
+    margin-top: 6px;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 0.98;
+  }
+
+  .section-title p:last-child {
+    max-width: 19rem;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    text-align: right;
+  }
+
+  .dish-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .dish {
+    display: grid;
+    grid-template-columns: 168px minmax(0, 1fr);
+    min-height: 188px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--paper);
+    overflow: hidden;
+    transition: transform 150ms ease-out, border-color 150ms ease-out, background-color 150ms ease-out;
+  }
+
+  .dish-photo {
+    position: relative;
+    min-height: 188px;
+    background:
+      linear-gradient(135deg, rgba(196, 54, 47, 0.2), rgba(31, 93, 122, 0.18)),
+      var(--paper-soft);
+    overflow: hidden;
+  }
+
+  .dish-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-right: 1px solid rgba(23, 33, 29, 0.12);
+    background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.12));
+    pointer-events: none;
+  }
+
+  .dish-body {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 18px 18px 16px;
+  }
+
+  .dish-top {
     display: flex;
     align-items: baseline;
-    gap: 0.5rem;
+    gap: 10px;
   }
 
   .dish-name {
     font-family: "Fraunces", Georgia, serif;
-    font-weight: 600;
-    font-size: 1.12rem;
-    line-height: 1.3;
-    transition: color 0.18s ease;
+    font-size: clamp(1.24rem, 2vw, 1.55rem);
+    font-weight: 700;
+    line-height: 1.04;
   }
 
   .leader {
     flex: 1;
-    min-width: 1.25rem;
-    border-bottom: 2px dotted var(--rule);
-    transform: translateY(-0.28em);
+    min-width: 18px;
+    border-bottom: 2px dotted var(--line);
+    transform: translateY(-0.26em);
   }
 
   .price {
-    font-weight: 700;
+    color: var(--tomato);
     font-size: 1rem;
+    font-weight: 800;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
-    transition: color 0.18s ease;
   }
 
   .price .per {
-    font-weight: 500;
-    font-size: 0.8em;
     color: var(--ink-soft);
-  }
-
-  .price.gift {
-    color: var(--accent);
-    font-size: 0.85rem;
-    letter-spacing: 0.06em;
-    text-transform: lowercase;
+    font-size: 0.78em;
+    font-weight: 700;
   }
 
   .dish-desc {
-    display: block;
-    margin-top: 0.28rem;
-    font-size: 0.88rem;
+    margin-top: 10px;
     color: var(--ink-soft);
-    max-width: 32rem;
+    font-size: 0.93rem;
   }
 
-  /* footer */
+  .dish-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 16px;
+  }
+
+  .stamp {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    color: var(--cobalt);
+  }
+
+  .gift-stamp { color: var(--tomato); }
+
+  .url {
+    min-width: 0;
+    color: var(--ink-soft);
+    font-family: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+    font-size: 0.73rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .pull-quote {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.38fr);
+    gap: clamp(18px, 4vw, 48px);
+    align-items: center;
+    padding: clamp(26px, 6vw, 62px) clamp(20px, 5vw, 64px);
+    background: var(--room);
+    color: #fffdf8;
+  }
+
+  .pull-quote p:first-child {
+    max-width: 18em;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(1.8rem, 5vw, 4rem);
+    line-height: 1;
+  }
+
+  .pull-quote p:last-child {
+    color: rgba(255, 253, 248, 0.78);
+    font-size: 0.95rem;
+  }
+
   footer {
-    text-align: center;
-    border-top: 1px solid var(--rule);
-    padding-top: 1.8rem;
-    margin-top: 0.5rem;
+    padding: 34px clamp(20px, 5vw, 64px) 40px;
+    background: var(--paper);
   }
 
   .footer-motto {
     font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.7rem);
     font-style: italic;
-    font-size: 1rem;
   }
 
   .footer-links {
-    margin-top: 0.9rem;
-    font-size: 0.85rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    margin-top: 18px;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
   }
 
   .footer-links a {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
     color: var(--ink);
     text-decoration: underline;
-    text-decoration-color: var(--rule);
-    text-underline-offset: 3px;
-    transition: text-decoration-color 0.18s ease, color 0.18s ease;
+    text-decoration-color: var(--line);
+    text-underline-offset: 4px;
+    transition: color 150ms ease-out, text-decoration-color 150ms ease-out;
   }
 
-  .footer-links a:hover { color: var(--accent); text-decoration-color: var(--accent); }
-
-  .footer-links .sep { color: var(--ink-soft); margin: 0 0.5rem; }
-
-  .footer-open {
-    margin-top: 0.7rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.04em;
-    color: var(--ink-soft);
+  .cover-tile:focus-visible,
+  .dish:focus-visible,
+  .footer-links a:focus-visible {
+    outline: 3px solid var(--brass);
+    outline-offset: 3px;
   }
 
-  @media (max-width: 420px) {
-    body { padding: 2rem 1rem 2.5rem; }
-    .dish::before { display: none; }
-    .dish-name { font-size: 1.05rem; }
+  @media (hover: hover) {
+    .cover-tile:hover img,
+    .dish:hover img {
+      transform: scale(1.045);
+    }
+
+    .dish:hover {
+      transform: translateY(-3px);
+      border-color: color-mix(in srgb, var(--tomato), var(--line) 52%);
+      background: var(--wash);
+    }
+
+    .dish:hover .stamp,
+    .footer-links a:hover {
+      color: var(--tomato);
+      text-decoration-color: var(--tomato);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .cover-tile img,
+    .dish-photo img {
+      transition: transform 300ms ease-out, filter 150ms ease-out;
+    }
+  }
+
+  @media (max-width: 920px) {
+    body { padding: 12px; }
+
+    .cover,
+    .pull-quote {
+      grid-template-columns: 1fr;
+    }
+
+    .cover-copy {
+      padding: 38px 24px 34px;
+    }
+
+    .cover-gallery {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .cover-tile {
+      min-height: 142px;
+    }
+
+    .dish-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .menu-sheet {
+      border-left: 0;
+      border-right: 0;
+    }
+
+    .cover-gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .section-title {
+      grid-template-columns: 1fr;
+    }
+
+    .section-title p:last-child {
+      text-align: left;
+    }
+
+    .dish {
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+
+    .dish-photo {
+      aspect-ratio: 16 / 9;
+      min-height: 0;
+    }
+
+    .dish-photo::after {
+      border-right: 0;
+      border-bottom: 1px solid rgba(23, 33, 29, 0.12);
+    }
+
+    .dish-top {
+      align-items: flex-start;
+    }
+
+    .leader {
+      display: none;
+    }
+
+    .dish-foot {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 4px;
+    }
   }
 </style>
 </head>
 <body>
-<main class="menu-card">
+<main class="menu-sheet">
+  <header class="cover">
+    <div class="cover-copy">
+      <p class="eyebrow">Dinner service, open now</p>
+      <h1 class="wordmark">adam<span class="dot">.</span>inc</h1>
+      <p class="tagline">Some things are gifts. Some have a price. Nothing in between.</p>
+      <p class="kitchen-note">kitchen: 44 products built in the Aether workshop &middot; chef: Adam Pang + a brigade of AI agents</p>
+      <p class="meta-line"><span>gifts first</span><span>prices upfront</span><span>links live</span></p>
+    </div>
 
-  <header>
-    <h1 class="wordmark">adam<span class="dot">.</span>inc</h1>
-    <p class="tagline">The menu. Some things are gifts. Some have a price. Nothing in between.</p>
-    <p class="kitchen-note">kitchen: 44 products built in the Aether workshop &middot; chef: Adam Pang + a brigade of AI agents</p>
+    <div class="cover-gallery" aria-label="Featured sites">
+      <a class="cover-tile" href="https://deathmoney.fyi" target="_blank" rel="noopener">
+        <img src="shots/deathmoney.jpg" width="900" height="650" alt="Preview of deathmoney.fyi">
+        <span>deathmoney.fyi</span>
+      </a>
+      <a class="cover-tile" href="https://anchormarianas.com/scan" target="_blank" rel="noopener">
+        <img src="shots/site-scan.jpg" width="900" height="650" alt="Preview of the Anchor Marianas scan">
+        <span>site scan</span>
+      </a>
+      <a class="cover-tile" href="https://sellsniper.com/scan" target="_blank" rel="noopener">
+        <img src="shots/sellsniper-scan.jpg" width="900" height="650" alt="Preview of SellSniper scan">
+        <span>sellsniper</span>
+      </a>
+      <a class="cover-tile" href="https://cal.com/adamtpang" target="_blank" rel="noopener">
+        <img src="shots/call.jpg" width="900" height="650" alt="Preview of Adam Pang's Cal.com page">
+        <span>15 minute call</span>
+      </a>
+    </div>
   </header>
 
-  <section aria-labelledby="gifts">
-    <div class="section-head"><h2 id="gifts">ON THE HOUSE 🎁</h2></div>
-    <p class="section-note">free, no strings</p>
+  <section class="menu-section" aria-labelledby="gifts">
+    <div class="section-title">
+      <div>
+        <p class="section-kicker">On the house</p>
+        <h2 id="gifts">Gifts</h2>
+      </div>
+      <p>Free, no strings. Each one opens the actual thing.</p>
+    </div>
 
-    <a class="dish" href="https://deathmoney.fyi" target="_blank" rel="noopener">
-      <span class="dish-line">
-        <span class="dish-name">Your financial freedom number</span>
-        <span class="leader"></span>
-        <span class="price gift">gift</span>
-      </span>
-      <span class="dish-desc">how much money do you need to never work again</span>
-    </a>
+    <div class="dish-grid">
+      <a class="dish" href="https://deathmoney.fyi" target="_blank" rel="noopener">
+        <span class="dish-photo">
+          <img src="shots/deathmoney.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of deathmoney.fyi">
+        </span>
+        <span class="dish-body">
+          <span class="dish-top">
+            <span class="dish-name">Your financial freedom number</span>
+            <span class="leader"></span>
+            <span class="price">gift</span>
+          </span>
+          <span class="dish-desc">A clean calculator for the amount of money you need to never work again.</span>
+          <span class="dish-foot">
+            <span class="stamp gift-stamp">house dish</span>
+            <span class="url">deathmoney.fyi</span>
+          </span>
+        </span>
+      </a>
 
-    <a class="dish" href="https://anchormarianas.com/scan" target="_blank" rel="noopener">
-      <span class="dish-line">
-        <span class="dish-name">Free business site audit</span>
-        <span class="leader"></span>
-        <span class="price gift">gift</span>
-      </span>
-      <span class="dish-desc">what your website is costing you</span>
-    </a>
+      <a class="dish" href="https://anchormarianas.com/scan" target="_blank" rel="noopener">
+        <span class="dish-photo">
+          <img src="shots/site-scan.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of the Anchor Marianas scan">
+        </span>
+        <span class="dish-body">
+          <span class="dish-top">
+            <span class="dish-name">Free business site audit</span>
+            <span class="leader"></span>
+            <span class="price">gift</span>
+          </span>
+          <span class="dish-desc">A fast read on what your website is costing you and where to fix it first.</span>
+          <span class="dish-foot">
+            <span class="stamp gift-stamp">house dish</span>
+            <span class="url">anchormarianas.com/scan</span>
+          </span>
+        </span>
+      </a>
 
-    <a class="dish" href="https://sellsniper.com/scan" target="_blank" rel="noopener">
-      <span class="dish-line">
-        <span class="dish-name">Find your product's people</span>
-        <span class="leader"></span>
-        <span class="price gift">gift</span>
-      </span>
-      <span class="dish-desc">where to share anything you made</span>
-    </a>
+      <a class="dish" href="https://sellsniper.com/scan" target="_blank" rel="noopener">
+        <span class="dish-photo">
+          <img src="shots/sellsniper-scan.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of SellSniper scan">
+        </span>
+        <span class="dish-body">
+          <span class="dish-top">
+            <span class="dish-name">Find your product's people</span>
+            <span class="leader"></span>
+            <span class="price">gift</span>
+          </span>
+          <span class="dish-desc">Drop a link and get the rooms, people, and angles worth testing first.</span>
+          <span class="dish-foot">
+            <span class="stamp gift-stamp">house dish</span>
+            <span class="url">sellsniper.com/scan</span>
+          </span>
+        </span>
+      </a>
 
-    <a class="dish" href="https://cal.com/adamtpang" target="_blank" rel="noopener">
-      <span class="dish-line">
-        <span class="dish-name">A 15-minute call</span>
-        <span class="leader"></span>
-        <span class="price gift">gift</span>
-      </span>
-      <span class="dish-desc">bring any problem</span>
-    </a>
+      <a class="dish" href="https://cal.com/adamtpang" target="_blank" rel="noopener">
+        <span class="dish-photo">
+          <img src="shots/call.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of Adam Pang's Cal.com page">
+        </span>
+        <span class="dish-body">
+          <span class="dish-top">
+            <span class="dish-name">A 15-minute call</span>
+            <span class="leader"></span>
+            <span class="price">gift</span>
+          </span>
+          <span class="dish-desc">Bring any problem. I will help you find the shortest honest next move.</span>
+          <span class="dish-foot">
+            <span class="stamp gift-stamp">house dish</span>
+            <span class="url">cal.com/adamtpang</span>
+          </span>
+        </span>
+      </a>
+    </div>
   </section>
 
-  <section aria-labelledby="menu">
-    <div class="section-head"><h2 id="menu">THE MENU 🍽️</h2></div>
-    <p class="section-note">every price is upfront, pay and we start</p>
+  <div class="pull-quote">
+    <p>Every offer is priced before the first bite.</p>
+    <p>No hidden hopes, no vague retainers, no "let's hop on a call" before the number. The price is part of the dish.</p>
+  </div>
 
-    <a class="dish" href="https://buy.stripe.com/6oUfZhdjk8gJcME6KtaMU0m" target="_blank" rel="noopener">
-      <span class="dish-line">
-        <span class="dish-name">Landing page in 5 days</span>
-        <span class="leader"></span>
-        <span class="price">$497</span>
-      </span>
-      <span class="dish-desc">one page that sells one thing, live by Friday, refund if late</span>
-    </a>
+  <section class="menu-section" aria-labelledby="menu">
+    <div class="section-title">
+      <div>
+        <p class="section-kicker">The menu</p>
+        <h2 id="menu">Offers</h2>
+      </div>
+      <p>Every price is upfront. Tap a dish to order, pay, email, or open the real site.</p>
+    </div>
 
-    <a class="dish" href="https://buy.stripe.com/eVqfZhbbc68BdQI1q9aMU0n" target="_blank" rel="noopener">
-      <span class="dish-line">
-        <span class="dish-name">Web app MVP in 5 days</span>
-        <span class="leader"></span>
-        <span class="price">$1,997</span>
-      </span>
-      <span class="dish-desc">your idea, working in the real world</span>
-    </a>
+    <div class="dish-grid">
+      <a class="dish" href="https://buy.stripe.com/6oUfZhdjk8gJcME6KtaMU0m" target="_blank" rel="noopener">
+        <span class="dish-photo">
+          <img src="shots/anchor.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of Anchor Marianas">
+        </span>
+        <span class="dish-body">
+          <span class="dish-top">
+            <span class="dish-name">Landing page in 5 days</span>
+            <span class="leader"></span>
+            <span class="price">$497</span>
+          </span>
+          <span class="dish-desc">One page that sells one thing, live by Friday, refund if late.</span>
+          <span class="dish-foot">
+            <span class="stamp">order</span>
+            <span class="url">stripe checkout</span>
+          </span>
+        </span>
+      </a>
 
-    <a class="dish" href="https://buy.stripe.com/4gM00jgvw8gJ13W8SBaMU0t" target="_blank" rel="noopener">
-      <span class="dish-line">
-        <span class="dish-name">50 warm B2B leads, done for you</span>
-        <span class="leader"></span>
-        <span class="price">$500</span>
-      </span>
-      <span class="dish-desc">named people who want your thing, you only pay for real ones</span>
-    </a>
+      <a class="dish" href="https://buy.stripe.com/eVqfZhbbc68BdQI1q9aMU0n" target="_blank" rel="noopener">
+        <span class="dish-photo">
+          <img src="shots/vitals.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of vitals.run">
+        </span>
+        <span class="dish-body">
+          <span class="dish-top">
+            <span class="dish-name">Web app MVP in 5 days</span>
+            <span class="leader"></span>
+            <span class="price">$1,997</span>
+          </span>
+          <span class="dish-desc">Your idea shaped into something people can actually open, click, and use.</span>
+          <span class="dish-foot">
+            <span class="stamp">order</span>
+            <span class="url">stripe checkout</span>
+          </span>
+        </span>
+      </a>
 
-    <a class="dish" href="https://buy.stripe.com/eVqfZhdjkcwZ5kcb0JaMU0k" target="_blank" rel="noopener">
-      <span class="dish-line">
-        <span class="dish-name">deathmoney founding lifetime license</span>
-        <span class="leader"></span>
-        <span class="price">$19</span>
-      </span>
-      <span class="dish-desc">lock everything it becomes, forever</span>
-    </a>
+      <a class="dish" href="https://buy.stripe.com/4gM00jgvw8gJ13W8SBaMU0t" target="_blank" rel="noopener">
+        <span class="dish-photo">
+          <img src="shots/sellsniper.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of SellSniper">
+        </span>
+        <span class="dish-body">
+          <span class="dish-top">
+            <span class="dish-name">50 warm B2B leads, done for you</span>
+            <span class="leader"></span>
+            <span class="price">$500</span>
+          </span>
+          <span class="dish-desc">Named people and places to reach, packaged so you can start selling.</span>
+          <span class="dish-foot">
+            <span class="stamp">order</span>
+            <span class="url">stripe checkout</span>
+          </span>
+        </span>
+      </a>
 
-    <a class="dish" href="mailto:adam@anchormarianas.com?subject=Care%20plan">
-      <span class="dish-line">
-        <span class="dish-name">Site care plan</span>
-        <span class="leader"></span>
-        <span class="price">$500<span class="per">/mo</span></span>
-      </span>
-      <span class="dish-desc">your site stays fast, current, improving</span>
-    </a>
+      <a class="dish" href="https://buy.stripe.com/eVqfZhdjkcwZ5kcb0JaMU0k" target="_blank" rel="noopener">
+        <span class="dish-photo">
+          <img src="shots/deathmoney.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of deathmoney.fyi">
+        </span>
+        <span class="dish-body">
+          <span class="dish-top">
+            <span class="dish-name">deathmoney founding lifetime license</span>
+            <span class="leader"></span>
+            <span class="price">$19</span>
+          </span>
+          <span class="dish-desc">Lock everything deathmoney becomes, forever, at the founder table.</span>
+          <span class="dish-foot">
+            <span class="stamp">order</span>
+            <span class="url">stripe checkout</span>
+          </span>
+        </span>
+      </a>
 
-    <a class="dish" href="mailto:me@adampang.com?subject=Pilot">
-      <span class="dish-line">
-        <span class="dish-name">Company College pilot, 6 weeks</span>
-        <span class="leader"></span>
-        <span class="price">$60,000</span>
-      </span>
-      <span class="dish-desc">your company becomes a school that mints hires and believers (Notion signed, Zcash ran)</span>
-    </a>
+      <a class="dish" href="mailto:adam@anchormarianas.com?subject=Care%20plan">
+        <span class="dish-photo">
+          <img src="shots/anchor.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of Anchor Marianas">
+        </span>
+        <span class="dish-body">
+          <span class="dish-top">
+            <span class="dish-name">Site care plan</span>
+            <span class="leader"></span>
+            <span class="price">$500<span class="per">/mo</span></span>
+          </span>
+          <span class="dish-desc">Your site stays fast, current, backed up, monitored, and improving.</span>
+          <span class="dish-foot">
+            <span class="stamp">email</span>
+            <span class="url">adam@anchormarianas.com</span>
+          </span>
+        </span>
+      </a>
+
+      <a class="dish" href="mailto:me@adampang.com?subject=Pilot">
+        <span class="dish-photo">
+          <img src="shots/school.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of zcash.school">
+        </span>
+        <span class="dish-body">
+          <span class="dish-top">
+            <span class="dish-name">Company College pilot, 6 weeks</span>
+            <span class="leader"></span>
+            <span class="price">$60,000</span>
+          </span>
+          <span class="dish-desc">Your company becomes a school that mints hires and believers. Notion signed, Zcash ran.</span>
+          <span class="dish-foot">
+            <span class="stamp">email</span>
+            <span class="url">me@adampang.com</span>
+          </span>
+        </span>
+      </a>
+    </div>
   </section>
 
   <footer>
     <p class="footer-motto">Every price is the whole price. Every gift is a whole gift.</p>
     <p class="footer-links">
       <a href="https://adampang.com" target="_blank" rel="noopener">adampang.com</a>
-      <span class="sep">&middot;</span>
       <a href="https://anchormarianas.com" target="_blank" rel="noopener">anchormarianas.com</a>
+      <a href="https://github.com/adamtpang/adam.gives" target="_blank" rel="noopener">source</a>
     </p>
-    <p class="footer-open">built in the open &middot; Operation 24</p>
   </footer>
-
 </main>
 </body>
 </html>
