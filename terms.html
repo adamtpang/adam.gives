@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of service &middot; adam.inc</title>
+<meta name="description" content="Terms of service for the adam.inc menu and offers.">
+<link rel="canonical" href="https://adam.gives/terms">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0f2a24" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#071815" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='9' y='7' width='46' height='50' rx='5' fill='%23fffdf8' stroke='%230f2a24' stroke-width='4'/%3E%3Cpath d='M19 21h26M19 32h26M19 43h18' stroke='%23c4362f' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --room: #0f2a24;
+    --room-deep: #081b17;
+    --paper: #fffdf8;
+    --paper-soft: #f5f0e6;
+    --ink: #17211d;
+    --ink-soft: #66716a;
+    --tomato: #c4362f;
+    --cobalt: #1f5d7a;
+    --brass: #c89d3f;
+    --line: #d9d0bf;
+    --wash: #f9f4ea;
+    --shadow: 0 24px 70px rgba(4, 18, 15, 0.28);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --room: #071815;
+      --room-deep: #04100e;
+      --paper: #171d1a;
+      --paper-soft: #202823;
+      --ink: #f4efe5;
+      --ink-soft: #b8b0a2;
+      --tomato: #f26b5e;
+      --cobalt: #7ab8d6;
+      --brass: #d7b768;
+      --line: #39433d;
+      --wash: #212a25;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 18% 0%, rgba(200, 157, 63, 0.24), transparent 35%),
+      var(--room);
+    color: var(--ink);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding: 28px 16px 40px;
+  }
+  a { color: inherit; }
+  .sheet {
+    width: min(100%, 760px);
+    margin: 0 auto;
+    background: var(--paper);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .doc-head {
+    padding: clamp(32px, 5.5vw, 60px) clamp(22px, 5vw, 56px) clamp(20px, 3vw, 32px);
+    border-bottom: 1px solid var(--line);
+    background:
+      linear-gradient(135deg, rgba(15, 42, 36, 0.06), transparent 45%),
+      var(--paper);
+  }
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--tomato);
+  }
+  .doc-head h1 {
+    margin-top: 12px;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1;
+  }
+  .updated {
+    margin-top: 14px;
+    color: var(--ink-soft);
+    font-size: 0.86rem;
+  }
+  .doc-body {
+    padding: clamp(24px, 4.5vw, 48px) clamp(22px, 5vw, 56px) clamp(30px, 5vw, 52px);
+  }
+  .doc-body h2 {
+    margin-top: 34px;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .doc-body h2:first-child { margin-top: 0; }
+  .doc-body p { margin-top: 12px; color: var(--ink); }
+  .doc-body ul { margin: 12px 0 0 1.1rem; }
+  .doc-body li { margin-top: 8px; }
+  .doc-body a { color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; }
+  .note {
+    margin-top: 28px;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--wash);
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+  footer {
+    padding: 26px clamp(22px, 5vw, 56px) 34px;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+  .footer-links a {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-underline-offset: 4px;
+    transition: color 150ms ease-out, text-decoration-color 150ms ease-out;
+  }
+  .footer-links a:focus-visible {
+    outline: 3px solid var(--brass);
+    outline-offset: 3px;
+  }
+  @media (hover: hover) {
+    .footer-links a:hover { color: var(--tomato); text-decoration-color: var(--tomato); }
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+  <header class="doc-head">
+    <p class="eyebrow">adam.inc</p>
+    <h1>Terms of service</h1>
+    <p class="updated">Last updated 13 July 2026</p>
+  </header>
+
+  <div class="doc-body">
+    <h2>Who we are</h2>
+    <p>This website, adam.gives (the "site"), and the offers listed on it are operated by Anchor Marianas LLC ("we", "us", or "our"), a limited liability company founded by Adam Pang in the United States. You can reach us at <a href="mailto:adam@anchormarianas.com">adam@anchormarianas.com</a>.</p>
+
+    <h2>Acceptance of these terms</h2>
+    <p>By visiting the site, ordering an offer, or paying an invoice, you agree to these terms of service. If you do not agree, please do not use the site or purchase our services.</p>
+
+    <h2>What we offer</h2>
+    <p>The site presents two kinds of items. Gifts are free tools and resources offered with no purchase required. Offers are paid services, such as landing pages, web app builds, lead lists, licenses, care plans, and pilots, each shown with an upfront price. The description on each card is a summary, not the full scope. The exact scope of a paid engagement is agreed in writing between you and us before work begins.</p>
+
+    <h2>Orders and payment</h2>
+    <p>Paid offers are purchased through Stripe, our third party payment processor, or by arrangement over email. Prices are shown in US dollars and are due at the time of purchase unless we agree otherwise in writing. We do not store your full card details. Payment card information is handled directly by Stripe under its own terms and privacy policy.</p>
+
+    <h2>Subscriptions</h2>
+    <p>Some offers, such as a monthly care plan, renew on a recurring basis until cancelled. You may cancel a recurring plan at any time by emailing us before the next billing date. Cancellation stops future charges and does not refund a period already started unless we agree otherwise.</p>
+
+    <h2>Delivery, timelines, and refunds</h2>
+    <p>Where an offer states a delivery window or a refund promise, that promise applies as written on the card at the time of your order. Delivery timelines assume you provide the content, access, and feedback we need on time. If a stated deadline is missed for reasons within our control, the refund terms shown on that offer apply. Outside of a stated promise, fees for work already performed are non refundable.</p>
+
+    <h2>Your responsibilities</h2>
+    <p>You agree to provide accurate information, to hold the rights to any material you send us, and to use anything we deliver in a lawful way. You are responsible for your own accounts, hosting, and third party services unless we agree in writing to manage them for you.</p>
+
+    <h2>Intellectual property</h2>
+    <p>Unless we agree otherwise in writing, you own the final deliverables we create specifically for you once payment is complete. We keep ownership of our own pre existing tools, templates, and know how, and we may reuse general skills and non confidential techniques on other projects. The site itself, including its text, layout, and images, remains our property.</p>
+
+    <h2>Free gifts</h2>
+    <p>Gifts are provided as is, at no cost, and may change or be withdrawn at any time. They come with no service commitment.</p>
+
+    <h2>Disclaimers</h2>
+    <p>The site and our services are provided on an as is and as available basis. We do not guarantee any specific business, financial, or ranking result. Nothing on the site is legal, tax, or investment advice.</p>
+
+    <h2>Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, our total liability for any claim relating to the site or an offer is limited to the amount you paid us for that offer in the three months before the claim. We are not liable for indirect, incidental, or consequential losses, including lost profits or data.</p>
+
+    <h2>Third party links and services</h2>
+    <p>The site links to third party websites and uses third party tools such as Stripe for payments, Vercel for hosting, and Cal.com for scheduling. We are not responsible for the content or practices of services we do not control.</p>
+
+    <h2>Governing law</h2>
+    <p>These terms are governed by the laws of the United States and the state or territory in which Anchor Marianas LLC is organized, without regard to conflict of law rules. Any dispute will be handled in the courts of that jurisdiction.</p>
+
+    <h2>Changes to these terms</h2>
+    <p>We may update these terms from time to time. The version posted on this page, with its last updated date, is the current one. Continued use of the site after a change means you accept the updated terms.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about these terms can be sent to <a href="mailto:adam@anchormarianas.com">adam@anchormarianas.com</a>.</p>
+
+    <p class="note">This is a standard, generic template intended for a small United States company that takes online payments. It is not legal advice. Please have a licensed attorney review and tailor it before relying on it for anything high stakes.</p>
+  </div>
+
+  <footer>
+    <p class="footer-links">
+      <a href="/">back to the menu</a>
+      <a href="https://adam.gives">adam.gives</a>
+      <a href="https://adampang.com" target="_blank" rel="noopener">adampang.com</a>
+      <a href="/privacy">privacy</a>
+      <a href="mailto:adam@anchormarianas.com">contact</a>
+    </p>
+  </footer>
+</main>
+</body>
+</html>
