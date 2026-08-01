@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>the adam.inc menu</title>
-<meta name="description" content="gifts on the house, prices on the menu">
+<meta name="description" content="One menu, me as a service. Three offers, every price upfront.">
 <link rel="canonical" href="https://adam.gives/">
 <meta name="theme-color" content="#0f2a24" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#071815" media="(prefers-color-scheme: dark)">
 
 <meta property="og:title" content="the adam.inc menu">
-<meta property="og:description" content="gifts on the house, prices on the menu">
+<meta property="og:description" content="One menu, me as a service. Three offers, every price upfront.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://adam.gives/">
 <meta property="og:image" content="https://adam.gives/og.jpg">
 <meta property="og:site_name" content="adam.inc">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="the adam.inc menu">
-<meta name="twitter:description" content="gifts on the house, prices on the menu">
+<meta name="twitter:description" content="One menu, me as a service. Three offers, every price upfront.">
 <meta name="twitter:image" content="https://adam.gives/og.jpg">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='9' y='7' width='46' height='50' rx='5' fill='%23fffdf8' stroke='%230f2a24' stroke-width='4'/%3E%3Cpath d='M19 21h26M19 32h26M19 43h18' stroke='%23c4362f' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -25,6 +25,35 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!--
+  THE ONE MENU (rebuilt 2026-08-01 per PROMPT_one-menu.md)
+
+  What this page is: the single storefront for Adam as a service. Exactly three
+  rungs, all reusing Stripe products that already exist. Context for the ladder:
+  100 percent of lifetime stranger revenue ($147, 2 charges) came from humans
+  buying Adam's time and hands directly. That fact stays in this comment and in
+  MENU_inventory.md, never in customer copy.
+
+  Hard rules honored here:
+  - no em dashes anywhere in this file
+  - no new Stripe products, prices, or links; reuse only
+  - no fabricated testimonials, logos, numbers, or photos
+  - evidence slot ships EMPTY (see the comment in the receipts section)
+  - offer-check verdicts live in comments and MENU_inventory.md, never on page
+
+  /offer-check verdicts (full workings in MENU_inventory.md):
+  RUNG 1 power hour: Dream 8 | Likelihood 10 | Delay 10 | Effort 10.
+    FIX: only blocker is the founder-supplied price + link (see the marked
+    comment below). Mailto CTA keeps the rung bookable meanwhile.
+  RUNG 2 build sprint ($1,500, live $750 deposit link): Dream 8 | Likelihood 10
+    | Delay 10 | Effort 10. VERDICT GO. Value about $10k replacement cost,
+    6.7x price, 13x at the founding slot. Price sits below the market floor;
+    founding case-study pricing, raise after three case studies.
+  RUNG 3 continuation: Dream 6 cold, met warm | Likelihood 10 | Delay 10 |
+    Effort 10. FIX: founder price + link missing; rung is positioned for
+    sprint graduates only, never the cold entry.
+-->
 
 <script type="application/ld+json">
 {
@@ -34,11 +63,19 @@
   "url": "https://adam.gives/",
   "logo": "https://adam.gives/og.jpg",
   "image": "https://adam.gives/og.jpg",
-  "description": "Gifts on the house, prices on the menu.",
-  "email": "adam@anchormarianas.com",
+  "description": "One menu, Adam as a service. Three offers, every price upfront.",
+  "email": "adamtpang@gmail.com",
   "founder": {
     "@type": "Person",
-    "name": "Adam Pang"
+    "name": "Adam Pang",
+    "url": "https://adampang.com"
+  },
+  "makesOffer": {
+    "@type": "Offer",
+    "name": "AI build sprint",
+    "description": "One thing you have wanted built, shipped working in about 7 days.",
+    "price": "1500",
+    "priceCurrency": "USD"
   },
   "sameAs": [
     "https://adampang.com",
@@ -88,245 +125,157 @@
   body {
     min-height: 100vh;
     background:
-      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-      linear-gradient(0deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-      radial-gradient(circle at 18% 0%, rgba(200, 157, 63, 0.24), transparent 35%),
+      radial-gradient(circle at 18% 0%, rgba(200, 157, 63, 0.22), transparent 38%),
       var(--room);
-    background-size: 32px 32px, 32px 32px, auto, auto;
     color: var(--ink);
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.55;
     -webkit-font-smoothing: antialiased;
-    padding: 28px 16px 36px;
+    padding: 24px 14px 40px;
   }
 
   a { color: inherit; }
 
-  .menu-sheet {
-    width: min(100%, 1160px);
+  .sheet {
+    width: min(100%, 780px);
     margin: 0 auto;
     background: var(--paper);
     border: 1px solid rgba(255, 255, 255, 0.28);
     box-shadow: var(--shadow);
-    overflow: hidden;
+  }
+
+  .kicker {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--tomato);
   }
 
   .cover {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
-    min-height: 480px;
-    background:
-      linear-gradient(135deg, rgba(15, 42, 36, 0.06), transparent 45%),
-      var(--paper);
+    padding: clamp(34px, 7vw, 60px) clamp(20px, 6vw, 56px) clamp(26px, 5vw, 40px);
     border-bottom: 1px solid var(--line);
   }
 
-  .cover-copy {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: clamp(32px, 5.5vw, 72px);
+  .wordmark {
+    margin-top: 12px;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(3rem, 9vw, 4.6rem);
+    font-weight: 700;
+    line-height: 0.94;
   }
 
-  .eyebrow,
-  .section-kicker,
-  .meta-line,
-  .stamp {
+  .wordmark .dot { color: var(--tomato); }
+
+  .tagline {
+    margin-top: 16px;
+    max-width: 17em;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(1.3rem, 4vw, 1.9rem);
+    font-weight: 400;
+    line-height: 1.12;
+  }
+
+  .intro {
+    margin-top: 18px;
+    max-width: 36rem;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .intro b { color: var(--ink); font-weight: 600; }
+
+  /* face slot styles kept even while the figure ships commented out */
+  .face {
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .face img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--line);
+  }
+
+  .supply {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    margin-top: 22px;
+    color: var(--cobalt);
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
   }
 
-  .eyebrow {
-    color: var(--tomato);
-  }
-
-  .wordmark {
-    margin-top: 14px;
-    font-family: "Fraunces", Georgia, serif;
-    font-size: clamp(3.2rem, 7.5vw, 5rem);
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 0.92;
-  }
-
-  .wordmark .dot { color: var(--tomato); }
-
-  .tagline {
-    max-width: 13.5em;
-    margin-top: 20px;
-    font-family: "Fraunces", Georgia, serif;
-    font-size: clamp(1.35rem, 3vw, 2.2rem);
-    font-weight: 400;
-    line-height: 1.08;
-  }
-
-  .kitchen-note {
-    max-width: 34rem;
-    margin-top: 24px;
-    color: var(--ink-soft);
-    font-size: 0.94rem;
-  }
-
-  .meta-line {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 30px;
-    color: var(--cobalt);
-  }
-
-  .cover-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    padding: 10px;
-    background: var(--room-deep);
-  }
-
-  .cover-tile,
-  .dish {
-    position: relative;
-    display: block;
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .cover-tile {
-    min-height: 214px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    background: #132c27;
-  }
-
-  .cover-tile img,
-  .dish-photo img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    filter: saturate(0.94) contrast(1.03);
-    transform: scale(1.01);
-  }
-
-  .cover-tile::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 42%, rgba(0, 0, 0, 0.72));
-  }
-
-  .cover-tile span {
-    position: absolute;
-    left: 14px;
-    right: 14px;
-    bottom: 12px;
-    z-index: 1;
-    color: #fffdf8;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .menu-section {
-    padding: clamp(28px, 6vw, 68px) clamp(18px, 5vw, 64px);
+  .menu {
+    padding: clamp(26px, 6vw, 46px) clamp(20px, 6vw, 56px);
     border-bottom: 1px solid var(--line);
   }
 
-  .section-title {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 18px;
-    align-items: end;
-    margin-bottom: 26px;
-  }
+  .menu-head { margin-bottom: 8px; }
 
-  .section-kicker { color: var(--tomato); }
-
-  .section-title h2 {
+  .menu-head h2 {
     margin-top: 6px;
     font-family: "Fraunces", Georgia, serif;
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(1.9rem, 6vw, 2.8rem);
     font-weight: 700;
-    letter-spacing: 0;
-    line-height: 0.98;
+    line-height: 1;
   }
 
-  .section-title p:last-child {
-    max-width: 19rem;
+  .menu-head p {
+    margin-top: 10px;
+    max-width: 34rem;
     color: var(--ink-soft);
     font-size: 0.92rem;
-    text-align: right;
   }
 
-  .dish-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+  .rung {
+    margin-top: 26px;
+    padding-top: 24px;
+    border-top: 1px dotted var(--line);
   }
 
-  .dish {
-    display: grid;
-    grid-template-columns: 168px minmax(0, 1fr);
-    min-height: 188px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: var(--paper);
-    overflow: hidden;
-    transition: transform 150ms ease-out, border-color 150ms ease-out, background-color 150ms ease-out;
+  .rung:first-of-type { margin-top: 18px; }
+
+  .rung-step {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cobalt);
   }
 
-  .dish-photo {
-    position: relative;
-    min-height: 188px;
-    background:
-      linear-gradient(135deg, rgba(196, 54, 47, 0.2), rgba(31, 93, 122, 0.18)),
-      var(--paper-soft);
-    overflow: hidden;
-  }
-
-  .dish-photo::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-right: 1px solid rgba(23, 33, 29, 0.12);
-    background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.12));
-    pointer-events: none;
-  }
-
-  .dish-body {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    padding: 18px 18px 16px;
-  }
-
-  .dish-top {
+  .rung-top {
     display: flex;
     align-items: baseline;
     gap: 10px;
+    margin-top: 8px;
   }
 
-  .dish-name {
+  .rung-name {
     font-family: "Fraunces", Georgia, serif;
-    font-size: clamp(1.24rem, 2vw, 1.55rem);
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
     font-weight: 700;
-    line-height: 1.04;
+    line-height: 1.05;
   }
 
   .leader {
     flex: 1;
     min-width: 18px;
     border-bottom: 2px dotted var(--line);
-    transform: translateY(-0.26em);
+    transform: translateY(-0.28em);
   }
 
   .price {
     color: var(--tomato);
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 800;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
@@ -338,80 +287,159 @@
     font-weight: 700;
   }
 
-  .dish-desc {
+  .rung-outcome {
     margin-top: 10px;
+    max-width: 36rem;
+    font-size: 0.97rem;
+  }
+
+  .rung-meta {
+    margin-top: 12px;
+    display: grid;
+    gap: 6px;
+    max-width: 36rem;
+  }
+
+  .rung-meta div {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 10px;
+    font-size: 0.88rem;
     color: var(--ink-soft);
-    font-size: 0.93rem;
   }
 
-  .dish-foot {
+  .rung-meta dt,
+  .rung-meta .k {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    padding-top: 0.22em;
+  }
+
+  .rung-meta .teeth { color: var(--ink); }
+
+  .rung-cta {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-top: auto;
-    padding-top: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
   }
 
-  .stamp {
+  .btn {
     display: inline-flex;
     align-items: center;
-    min-height: 40px;
-    color: var(--cobalt);
+    min-height: 44px;
+    padding: 10px 20px;
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 150ms ease-out, background-color 150ms ease-out, color 150ms ease-out;
   }
 
-  .gift-stamp { color: var(--tomato); }
-
-  .url {
-    min-width: 0;
-    color: var(--ink-soft);
-    font-family: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
-    font-size: 0.73rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .pull-quote {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.38fr);
-    gap: clamp(18px, 4vw, 48px);
-    align-items: center;
-    padding: clamp(26px, 6vw, 62px) clamp(20px, 5vw, 64px);
-    background: var(--room);
+  .btn.primary {
+    background: var(--tomato);
+    border-color: var(--tomato);
     color: #fffdf8;
   }
 
-  .pull-quote p:first-child {
-    max-width: 18em;
-    font-family: "Fraunces", Georgia, serif;
-    font-size: clamp(1.8rem, 5vw, 4rem);
-    line-height: 1;
+  .btn.quiet { color: var(--ink); }
+
+  .note {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
   }
 
-  .pull-quote p:last-child {
-    color: rgba(255, 253, 248, 0.78);
+  .receipts {
+    padding: clamp(26px, 6vw, 46px) clamp(20px, 6vw, 56px);
+    background: var(--wash);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .receipts h2 {
+    margin-top: 6px;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    font-weight: 700;
+  }
+
+  .receipt-list { margin-top: 14px; }
+
+  .receipt {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 4px 14px;
+    padding: 12px 0;
+    border-bottom: 1px dotted var(--line);
+    text-decoration: none;
+  }
+
+  .receipt:last-child { border-bottom: 0; }
+
+  .receipt .r-name {
+    font-weight: 600;
     font-size: 0.95rem;
   }
 
+  .receipt .r-date {
+    color: var(--cobalt);
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    align-self: start;
+    padding-top: 0.2em;
+  }
+
+  .receipt .r-desc {
+    grid-column: 1 / -1;
+    color: var(--ink-soft);
+    font-size: 0.86rem;
+  }
+
+  .receipts .fineprint {
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  .betabar {
+    padding: 18px clamp(20px, 6vw, 56px);
+    background: var(--room);
+    color: rgba(255, 253, 248, 0.92);
+    font-size: 0.88rem;
+  }
+
+  .betabar b { color: #fffdf8; }
+
+  .betabar a {
+    color: #fffdf8;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
   footer {
-    padding: 34px clamp(20px, 5vw, 64px) 40px;
+    padding: 30px clamp(20px, 6vw, 56px) 38px;
     background: var(--paper);
   }
 
-  .footer-motto {
+  .motto {
     font-family: "Fraunces", Georgia, serif;
-    font-size: clamp(1.15rem, 2.4vw, 1.7rem);
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
     font-style: italic;
   }
 
   .footer-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px 18px;
-    margin-top: 18px;
+    gap: 10px 18px;
+    margin-top: 16px;
     color: var(--ink-soft);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
 
   .footer-links a {
@@ -425,362 +453,191 @@
     transition: color 150ms ease-out, text-decoration-color 150ms ease-out;
   }
 
-  .cover-tile:focus-visible,
-  .dish:focus-visible,
-  .footer-links a:focus-visible {
+  .builtby {
+    margin-top: 16px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  .builtby a { color: inherit; }
+
+  a:focus-visible,
+  .btn:focus-visible {
     outline: 3px solid var(--brass);
     outline-offset: 3px;
   }
 
   @media (hover: hover) {
-    .cover-tile:hover img,
-    .dish:hover img {
-      transform: scale(1.045);
-    }
-
-    .dish:hover {
-      transform: translateY(-3px);
-      border-color: color-mix(in srgb, var(--tomato), var(--line) 52%);
-      background: var(--wash);
-    }
-
-    .dish:hover .stamp,
-    .footer-links a:hover {
+    .btn:hover { transform: translateY(-2px); }
+    .btn.quiet:hover { background: var(--wash); }
+    .footer-links a:hover,
+    .receipt:hover .r-name {
       color: var(--tomato);
       text-decoration-color: var(--tomato);
     }
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    .cover-tile img,
-    .dish-photo img {
-      transition: transform 300ms ease-out, filter 150ms ease-out;
-    }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+    html { scroll-behavior: auto; }
   }
 
-  @media (max-width: 920px) {
-    body { padding: 12px; }
-
-    .cover,
-    .pull-quote {
-      grid-template-columns: 1fr;
-    }
-
-    .cover-copy {
-      padding: 38px 24px 34px;
-    }
-
-    .cover-gallery {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .cover-tile {
-      min-height: 142px;
-    }
-
-    .dish-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .menu-sheet {
-      border-left: 0;
-      border-right: 0;
-    }
-
-    .cover-gallery {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .section-title {
-      grid-template-columns: 1fr;
-    }
-
-    .section-title p:last-child {
-      text-align: left;
-    }
-
-    .dish {
-      grid-template-columns: 1fr;
-      min-height: 0;
-    }
-
-    .dish-photo {
-      aspect-ratio: 16 / 9;
-      min-height: 0;
-    }
-
-    .dish-photo::after {
-      border-right: 0;
-      border-bottom: 1px solid rgba(23, 33, 29, 0.12);
-    }
-
-    .dish-top {
-      align-items: flex-start;
-    }
-
-    .leader {
-      display: none;
-    }
-
-    .dish-foot {
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 4px;
-    }
+  @media (max-width: 560px) {
+    body { padding: 10px 8px 28px; }
+    .rung-top { flex-wrap: wrap; }
+    .leader { display: none; }
+    .rung-meta div { grid-template-columns: 1fr; gap: 2px; }
+    .btn { width: 100%; justify-content: center; }
   }
 </style>
 </head>
 <body>
-<main class="menu-sheet">
+<main class="sheet">
   <header class="cover">
-    <div class="cover-copy">
-      <p class="eyebrow">Dinner service, open now</p>
-      <h1 class="wordmark">adam<span class="dot">.</span>inc</h1>
-      <p class="tagline">Some things are gifts. Some have a price. Nothing in between.</p>
-      <p class="kitchen-note">kitchen: 44 products built in the Aether workshop &middot; chef: Adam Pang + a brigade of AI agents</p>
-      <p class="meta-line"><span>gifts first</span><span>prices upfront</span><span>links live</span></p>
+    <p class="kicker">One menu, one Adam</p>
+    <h1 class="wordmark">adam<span class="dot">.</span>inc</h1>
+    <p class="tagline">Hire my hands. Three offers. Every price is upfront.</p>
+    <p class="intro"><b>I am Adam Pang.</b> I build small, sharp software fast, with a brigade of AI agents doing the boring parts. This page sells the one thing that does not scale: me, working on your thing. Start with an hour, graduate to a sprint, keep it alive monthly.</p>
+    <!-- FOUNDER: FACE PHOTO. No real photo asset exists in this repo, so nothing
+         was fabricated. Save a real photo as shots/adam.jpg in BOTH menu folders
+         (adam.inc and adam.gives), then uncomment this block.
+    <div class="face">
+      <img src="shots/adam.jpg" width="112" height="112" alt="Adam Pang">
+      <span class="intro" style="margin-top:0">That is me. The whole team photo.</span>
     </div>
-
-    <div class="cover-gallery" aria-label="Featured sites">
-      <a class="cover-tile" href="https://deathmoney.fyi" target="_blank" rel="noopener">
-        <img src="shots/deathmoney.jpg" width="900" height="650" alt="Preview of deathmoney.fyi">
-        <span>deathmoney.fyi</span>
-      </a>
-      <a class="cover-tile" href="https://anchormarianas.com/scan" target="_blank" rel="noopener">
-        <img src="shots/site-scan.jpg" width="900" height="650" alt="Preview of the Anchor Marianas scan">
-        <span>site scan</span>
-      </a>
-      <a class="cover-tile" href="https://sellsniper.com/scan" target="_blank" rel="noopener">
-        <img src="shots/sellsniper-scan.jpg" width="900" height="650" alt="Preview of SellSniper scan">
-        <span>sellsniper</span>
-      </a>
-      <a class="cover-tile" href="https://cal.com/adamtpang" target="_blank" rel="noopener">
-        <img src="shots/call.jpg" width="900" height="650" alt="Preview of Adam Pang's Cal.com page">
-        <span>15 minute call</span>
-      </a>
-    </div>
+    -->
+    <p class="supply"><span>there is exactly one of me</span><span>so the menu is short</span></p>
   </header>
 
-  <section class="menu-section" aria-labelledby="gifts">
-    <div class="section-title">
-      <div>
-        <p class="section-kicker">On the house</p>
-        <h2 id="gifts">Gifts</h2>
+  <section class="menu" aria-labelledby="menu-title">
+    <div class="menu-head">
+      <p class="kicker">The menu</p>
+      <h2 id="menu-title">Three rungs</h2>
+      <p>Each rung earns the next. The hour proves it works. The sprint ships the real thing. The continuation keeps it alive.</p>
+    </div>
+
+    <article class="rung" aria-labelledby="rung-hour">
+      <p class="rung-step">Rung one</p>
+      <div class="rung-top">
+        <h3 class="rung-name" id="rung-hour">Power hour</h3>
+        <span class="leader"></span>
+        <span class="price">fixed price</span>
       </div>
-      <p>Free, no strings. Each one opens the actual thing.</p>
-    </div>
+      <p class="rung-outcome">Your thing, unstuck. One live call, we build on your actual problem together, and you keep everything we make.</p>
+      <div class="rung-meta">
+        <div><span class="k">window</span><span>Booked within the week. Done in one hour.</span></div>
+        <div><span class="k">effort</span><span>One email, one call. Bring the one thing.</span></div>
+        <div><span class="k">guarantee</span><span class="teeth">If the hour ships nothing you can point at, it is free.</span></div>
+      </div>
+      <div class="rung-cta">
+        <!-- FOUNDER: POWER HOUR LINK + PRICE. The Stripe product "Build with me
+             power hour" already exists (keep:true). Its price and payment link
+             appear nowhere in this repo and were not guessed. Paste the existing
+             buy.stripe.com link as a .btn.primary here, put the real number in
+             the .price span above, and mirror the change into the adam.gives
+             folder. Details: MENU_inventory.md, founder decisions 1 and 2. -->
+        <a class="btn primary" href="mailto:adamtpang@gmail.com?subject=power%20hour&amp;body=The%20one%20thing%20I%20want%20unstuck%3A%20">Book the hour by email</a>
+      </div>
+      <p class="note">The whole price is in my first reply, before you say yes to anything.</p>
+    </article>
 
-    <div class="dish-grid">
-      <a class="dish" href="https://deathmoney.fyi" target="_blank" rel="noopener">
-        <span class="dish-photo">
-          <img src="shots/deathmoney.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of deathmoney.fyi">
-        </span>
-        <span class="dish-body">
-          <span class="dish-top">
-            <span class="dish-name">Your financial freedom number</span>
-            <span class="leader"></span>
-            <span class="price">gift</span>
-          </span>
-          <span class="dish-desc">A clean calculator for the amount of money you need to never work again.</span>
-          <span class="dish-foot">
-            <span class="stamp gift-stamp">house dish</span>
-            <span class="url">deathmoney.fyi</span>
-          </span>
-        </span>
-      </a>
+    <article class="rung" aria-labelledby="rung-sprint">
+      <p class="rung-step">Rung two</p>
+      <div class="rung-top">
+        <h3 class="rung-name" id="rung-sprint">Build sprint</h3>
+        <span class="leader"></span>
+        <span class="price">$1,500</span>
+      </div>
+      <p class="rung-outcome">The one thing you have wanted built, shipped working in about 7 days, live at a URL you own. You own the code, the repo, and the deploy.</p>
+      <div class="rung-meta">
+        <div><span class="k">window</span><span>Scoped same day. Shipped in about 7 days, with daily progress notes.</span></div>
+        <div><span class="k">effort</span><span>One email, one scope doc. No meetings.</span></div>
+        <div><span class="k">guarantee</span><span class="teeth">The $750 deposit books your slot. If I miss the scope we agreed, you never pay the remainder.</span></div>
+      </div>
+      <div class="rung-cta">
+        <a class="btn primary" href="https://buy.stripe.com/bJe6oH6UW68BaEwgl3aMU0p" target="_blank" rel="noopener">Pay the $750 deposit</a>
+        <a class="btn quiet" href="mailto:adamtpang@gmail.com?subject=sprint&amp;body=The%20one%20thing%20I%20want%20built%3A%20">Tell me the one thing first</a>
+      </div>
+      <p class="note">First three sprints at $750 flat in exchange for a case study. Same link, and the deposit is the whole price.</p>
+    </article>
 
-      <a class="dish" href="https://anchormarianas.com/scan" target="_blank" rel="noopener">
-        <span class="dish-photo">
-          <img src="shots/site-scan.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of the Anchor Marianas scan">
-        </span>
-        <span class="dish-body">
-          <span class="dish-top">
-            <span class="dish-name">Free business site audit</span>
-            <span class="leader"></span>
-            <span class="price">gift</span>
-          </span>
-          <span class="dish-desc">A fast read on what your website is costing you and where to fix it first.</span>
-          <span class="dish-foot">
-            <span class="stamp gift-stamp">house dish</span>
-            <span class="url">anchormarianas.com/scan</span>
-          </span>
-        </span>
-      </a>
-
-      <a class="dish" href="https://sellsniper.com/scan" target="_blank" rel="noopener">
-        <span class="dish-photo">
-          <img src="shots/sellsniper-scan.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of SellSniper scan">
-        </span>
-        <span class="dish-body">
-          <span class="dish-top">
-            <span class="dish-name">Find your product's people</span>
-            <span class="leader"></span>
-            <span class="price">gift</span>
-          </span>
-          <span class="dish-desc">Drop a link and get the rooms, people, and angles worth testing first.</span>
-          <span class="dish-foot">
-            <span class="stamp gift-stamp">house dish</span>
-            <span class="url">sellsniper.com/scan</span>
-          </span>
-        </span>
-      </a>
-
-      <a class="dish" href="https://cal.com/adamtpang" target="_blank" rel="noopener">
-        <span class="dish-photo">
-          <img src="shots/call.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of Adam Pang's Cal.com page">
-        </span>
-        <span class="dish-body">
-          <span class="dish-top">
-            <span class="dish-name">A 15-minute call</span>
-            <span class="leader"></span>
-            <span class="price">gift</span>
-          </span>
-          <span class="dish-desc">Bring any problem. I will help you find the shortest honest next move.</span>
-          <span class="dish-foot">
-            <span class="stamp gift-stamp">house dish</span>
-            <span class="url">cal.com/adamtpang</span>
-          </span>
-        </span>
-      </a>
-    </div>
+    <article class="rung" aria-labelledby="rung-cont">
+      <p class="rung-step">Rung three, for sprint graduates</p>
+      <div class="rung-top">
+        <h3 class="rung-name" id="rung-cont">Continuation</h3>
+        <span class="leader"></span>
+        <span class="price">monthly</span>
+      </div>
+      <p class="rung-outcome">The thing we shipped stays alive and keeps improving. Fixes, updates, and one new improvement every month, without you managing anyone.</p>
+      <div class="rung-meta">
+        <div><span class="k">window</span><span>Starts the day your sprint ships. Every month ends with a shipped-changes note.</span></div>
+        <div><span class="k">effort</span><span>Nothing to run. You read one note a month.</span></div>
+        <div><span class="k">guarantee</span><span class="teeth">A month whose shipped-changes note is empty is free. Cancel anytime with one email.</span></div>
+      </div>
+      <div class="rung-cta">
+        <!-- FOUNDER: CONTINUATION LINK + PRICE. The Stripe product "AI Build
+             Sprint Continuation" already exists (keep:true). Its monthly price
+             and payment link appear nowhere in this repo and were not guessed.
+             Paste the existing buy.stripe.com link as a .btn.primary here, put
+             the real number in the .price span above (pattern: $N<span
+             class="per">/mo</span>), and mirror into adam.gives. Details:
+             MENU_inventory.md, founder decisions 3 and 4. -->
+        <a class="btn primary" href="mailto:adamtpang@gmail.com?subject=continuation&amp;body=The%20sprint%20to%20keep%20alive%3A%20">Start the continuation by email</a>
+      </div>
+      <p class="note">Whole monthly price in my first reply. It never starts without a shipped sprint to continue.</p>
+    </article>
   </section>
 
-  <div class="pull-quote">
-    <p>Every offer is priced before the first bite.</p>
-    <p>No hidden hopes, no vague retainers, no "let's hop on a call" before the number. The price is part of the dish.</p>
+  <section class="receipts" aria-labelledby="receipts-title">
+    <p class="kicker">The receipts</p>
+    <h2 id="receipts-title">Real things, real dates</h2>
+
+    <div class="receipt-list">
+      <a class="receipt" href="https://moneymeta.fun" target="_blank" rel="noopener">
+        <span class="r-name">moneymeta.fun</span>
+        <span class="r-date">Aug 2026</span>
+        <span class="r-desc">A live data product ranking every way to make money, designed and shipped solo in days. Weekly report issues since Aug 1, 2026.</span>
+      </a>
+      <a class="receipt" href="https://deathmoney.fyi" target="_blank" rel="noopener">
+        <span class="r-name">deathmoney.fyi</span>
+        <span class="r-date">Jul 2026</span>
+        <span class="r-desc">The financial freedom number calculator. Free, no signup, live.</span>
+      </a>
+      <a class="receipt" href="/studio">
+        <span class="r-name">the studio</span>
+        <span class="r-date">Jul 2026</span>
+        <span class="r-desc">43 live products from one pair of hands and a brigade of agents. Every tile opens the real thing.</span>
+      </a>
+      <a class="receipt" href="https://github.com/adamtpang/adam.gives" target="_blank" rel="noopener">
+        <span class="r-name">this menu</span>
+        <span class="r-date">Jul 2026</span>
+        <span class="r-desc">First version live Jul 12, 2026. Rebuilt as the one menu Aug 1, 2026. Source public on GitHub.</span>
+      </a>
+    </div>
+
+    <!-- EVIDENCE SLOT (ships empty on purpose). When a real client testimonial
+         exists, render it here with the person's name, the date, and a link to
+         the shipped thing. Until then this section stays receipts-only.
+         Never fabricate a testimonial or a logo. -->
+
+    <p class="fineprint">No testimonials up there yet because I do not invent them. The links are the proof for now.</p>
+  </section>
+
+  <div class="betabar">
+    <b>Beta bar.</b> This menu is new and run by one human. If a link misbehaves, or you want a person before a price, email <a href="mailto:adamtpang@gmail.com">adamtpang@gmail.com</a> or take the free 15 minutes at <a href="https://cal.com/adamtpang" target="_blank" rel="noopener">cal.com/adamtpang</a>.
   </div>
 
-  <section class="menu-section" aria-labelledby="menu">
-    <div class="section-title">
-      <div>
-        <p class="section-kicker">The menu</p>
-        <h2 id="menu">Offers</h2>
-      </div>
-      <p>Every price is upfront. Tap a dish to order, pay, email, or open the real site.</p>
-    </div>
-
-    <div class="dish-grid">
-      <a class="dish" href="https://buy.stripe.com/6oUfZhdjk8gJcME6KtaMU0m" target="_blank" rel="noopener">
-        <span class="dish-photo">
-          <img src="shots/anchor.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of Anchor Marianas">
-        </span>
-        <span class="dish-body">
-          <span class="dish-top">
-            <span class="dish-name">Landing page in 5 days</span>
-            <span class="leader"></span>
-            <span class="price">$497</span>
-          </span>
-          <span class="dish-desc">One page that sells one thing, live by Friday, refund if late.</span>
-          <span class="dish-foot">
-            <span class="stamp">order</span>
-            <span class="url">stripe checkout</span>
-          </span>
-        </span>
-      </a>
-
-      <a class="dish" href="https://buy.stripe.com/eVqfZhbbc68BdQI1q9aMU0n" target="_blank" rel="noopener">
-        <span class="dish-photo">
-          <img src="shots/vitals.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of vitals.run">
-        </span>
-        <span class="dish-body">
-          <span class="dish-top">
-            <span class="dish-name">Web app MVP in 5 days</span>
-            <span class="leader"></span>
-            <span class="price">$1,997</span>
-          </span>
-          <span class="dish-desc">Your idea shaped into something people can actually open, click, and use.</span>
-          <span class="dish-foot">
-            <span class="stamp">order</span>
-            <span class="url">stripe checkout</span>
-          </span>
-        </span>
-      </a>
-
-      <a class="dish" href="https://buy.stripe.com/4gM00jgvw8gJ13W8SBaMU0t" target="_blank" rel="noopener">
-        <span class="dish-photo">
-          <img src="shots/sellsniper.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of SellSniper">
-        </span>
-        <span class="dish-body">
-          <span class="dish-top">
-            <span class="dish-name">50 warm B2B leads, done for you</span>
-            <span class="leader"></span>
-            <span class="price">$500</span>
-          </span>
-          <span class="dish-desc">Named people and places to reach, packaged so you can start selling.</span>
-          <span class="dish-foot">
-            <span class="stamp">order</span>
-            <span class="url">stripe checkout</span>
-          </span>
-        </span>
-      </a>
-
-      <a class="dish" href="https://buy.stripe.com/eVqfZhdjkcwZ5kcb0JaMU0k" target="_blank" rel="noopener">
-        <span class="dish-photo">
-          <img src="shots/deathmoney.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of deathmoney.fyi">
-        </span>
-        <span class="dish-body">
-          <span class="dish-top">
-            <span class="dish-name">deathmoney founding lifetime license</span>
-            <span class="leader"></span>
-            <span class="price">$19</span>
-          </span>
-          <span class="dish-desc">Lock everything deathmoney becomes, forever, at the founder table.</span>
-          <span class="dish-foot">
-            <span class="stamp">order</span>
-            <span class="url">stripe checkout</span>
-          </span>
-        </span>
-      </a>
-
-      <a class="dish" href="mailto:adam@anchormarianas.com?subject=Care%20plan">
-        <span class="dish-photo">
-          <img src="shots/anchor.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of Anchor Marianas">
-        </span>
-        <span class="dish-body">
-          <span class="dish-top">
-            <span class="dish-name">Site care plan</span>
-            <span class="leader"></span>
-            <span class="price">$500<span class="per">/mo</span></span>
-          </span>
-          <span class="dish-desc">Your site stays fast, current, backed up, monitored, and improving.</span>
-          <span class="dish-foot">
-            <span class="stamp">email</span>
-            <span class="url">adam@anchormarianas.com</span>
-          </span>
-        </span>
-      </a>
-
-      <a class="dish" href="mailto:me@adampang.com?subject=Pilot">
-        <span class="dish-photo">
-          <img src="shots/school.jpg" width="900" height="650" loading="lazy" decoding="async" alt="Screenshot preview of zcash.school">
-        </span>
-        <span class="dish-body">
-          <span class="dish-top">
-            <span class="dish-name">Company College pilot, 6 weeks</span>
-            <span class="leader"></span>
-            <span class="price">$60,000</span>
-          </span>
-          <span class="dish-desc">Your company becomes a school that mints hires and believers. Notion signed, Zcash ran.</span>
-          <span class="dish-foot">
-            <span class="stamp">email</span>
-            <span class="url">me@adampang.com</span>
-          </span>
-        </span>
-      </a>
-    </div>
-  </section>
-
   <footer>
-    <p class="footer-motto">Every price is the whole price. Every gift is a whole gift.</p>
+    <p class="motto">Every price is the whole price. Every gift is a whole gift.</p>
     <p class="footer-links">
       <a href="https://adampang.com" target="_blank" rel="noopener">adampang.com</a>
-      <a href="https://anchormarianas.com" target="_blank" rel="noopener">anchormarianas.com</a>
+      <a href="/studio">the studio</a>
+      <a href="/playbook">the playbook</a>
       <a href="/terms">terms</a>
       <a href="/privacy">privacy</a>
       <a href="https://github.com/adamtpang/adam.gives" target="_blank" rel="noopener">source</a>
     </p>
+    <p class="builtby"><a href="https://adam.gives" rel="author">built by adam.inc</a></p>
   </footer>
 </main>
 </body>
