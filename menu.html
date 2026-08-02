@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>the adam.inc menu</title>
+<meta name="description" content="One menu, me as a service. Three offers, every price upfront.">
+<link rel="canonical" href="https://adam.gives/">
+<meta name="theme-color" content="#0f2a24" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#071815" media="(prefers-color-scheme: dark)">
+
+<meta property="og:title" content="the adam.inc menu">
+<meta property="og:description" content="One menu, me as a service. Three offers, every price upfront.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://adam.gives/">
+<meta property="og:image" content="https://adam.gives/og.jpg">
+<meta property="og:site_name" content="adam.inc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="the adam.inc menu">
+<meta name="twitter:description" content="One menu, me as a service. Three offers, every price upfront.">
+<meta name="twitter:image" content="https://adam.gives/og.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='9' y='7' width='46' height='50' rx='5' fill='%23fffdf8' stroke='%230f2a24' stroke-width='4'/%3E%3Cpath d='M19 21h26M19 32h26M19 43h18' stroke='%23c4362f' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!--
+  THE ONE MENU (rebuilt 2026-08-01 per PROMPT_one-menu.md)
+
+  What this page is: the single storefront for Adam as a service. Exactly three
+  rungs, all reusing Stripe products that already exist. Context for the ladder:
+  100 percent of lifetime stranger revenue ($147, 2 charges) came from humans
+  buying Adam's time and hands directly. That fact stays in this comment and in
+  MENU_inventory.md, never in customer copy.
+
+  Hard rules honored here:
+  - no em dashes anywhere in this file
+  - no new Stripe products, prices, or links; reuse only
+  - no fabricated testimonials, logos, numbers, or photos
+  - evidence slot ships EMPTY (see the comment in the receipts section)
+  - offer-check verdicts live in comments and MENU_inventory.md, never on page
+
+  /offer-check verdicts (full workings in MENU_inventory.md):
+  RUNG 1 power hour: Dream 8 | Likelihood 10 | Delay 10 | Effort 10.
+    FIX: only blocker is the founder-supplied price + link (see the marked
+    comment below). Mailto CTA keeps the rung bookable meanwhile.
+  RUNG 2 build sprint ($1,500, live $750 deposit link): Dream 8 | Likelihood 10
+    | Delay 10 | Effort 10. VERDICT GO. Value about $10k replacement cost,
+    6.7x price, 13x at the founding slot. Price sits below the market floor;
+    founding case-study pricing, raise after three case studies.
+  RUNG 3 continuation: Dream 6 cold, met warm | Likelihood 10 | Delay 10 |
+    Effort 10. FIX: founder price + link missing; rung is positioned for
+    sprint graduates only, never the cold entry.
+-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "adam.inc",
+  "url": "https://adam.gives/",
+  "logo": "https://adam.gives/og.jpg",
+  "image": "https://adam.gives/og.jpg",
+  "description": "One menu, Adam as a service. Three offers, every price upfront.",
+  "email": "adamtpang@gmail.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Adam Pang",
+    "url": "https://adampang.com"
+  },
+  "makesOffer": {
+    "@type": "Offer",
+    "name": "AI build sprint",
+    "description": "One thing you have wanted built, shipped working in about 7 days.",
+    "price": "1500",
+    "priceCurrency": "USD"
+  },
+  "sameAs": [
+    "https://adampang.com",
+    "https://anchormarianas.com",
+    "https://github.com/adamtpang"
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --room: #0f2a24;
+    --room-deep: #081b17;
+    --paper: #fffdf8;
+    --paper-soft: #f5f0e6;
+    --ink: #17211d;
+    --ink-soft: #66716a;
+    --tomato: #c4362f;
+    --cobalt: #1f5d7a;
+    --brass: #c89d3f;
+    --line: #d9d0bf;
+    --wash: #f9f4ea;
+    --shadow: 0 24px 70px rgba(4, 18, 15, 0.28);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --room: #071815;
+      --room-deep: #04100e;
+      --paper: #171d1a;
+      --paper-soft: #202823;
+      --ink: #f4efe5;
+      --ink-soft: #b8b0a2;
+      --tomato: #f26b5e;
+      --cobalt: #7ab8d6;
+      --brass: #d7b768;
+      --line: #39433d;
+      --wash: #212a25;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 18% 0%, rgba(200, 157, 63, 0.22), transparent 38%),
+      var(--room);
+    color: var(--ink);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    padding: 24px 14px 40px;
+  }
+
+  a { color: inherit; }
+
+  .sheet {
+    width: min(100%, 780px);
+    margin: 0 auto;
+    background: var(--paper);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow: var(--shadow);
+  }
+
+  .kicker {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--tomato);
+  }
+
+  .cover {
+    padding: clamp(34px, 7vw, 60px) clamp(20px, 6vw, 56px) clamp(26px, 5vw, 40px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .wordmark {
+    margin-top: 12px;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(3rem, 9vw, 4.6rem);
+    font-weight: 700;
+    line-height: 0.94;
+  }
+
+  .wordmark .dot { color: var(--tomato); }
+
+  .tagline {
+    margin-top: 16px;
+    max-width: 17em;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(1.3rem, 4vw, 1.9rem);
+    font-weight: 400;
+    line-height: 1.12;
+  }
+
+  .intro {
+    margin-top: 18px;
+    max-width: 36rem;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .intro b { color: var(--ink); font-weight: 600; }
+
+  /* face slot styles kept even while the figure ships commented out */
+  .face {
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .face img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--line);
+  }
+
+  .supply {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    margin-top: 22px;
+    color: var(--cobalt);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .menu {
+    padding: clamp(26px, 6vw, 46px) clamp(20px, 6vw, 56px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .menu-head { margin-bottom: 8px; }
+
+  .menu-head h2 {
+    margin-top: 6px;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(1.9rem, 6vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .menu-head p {
+    margin-top: 10px;
+    max-width: 34rem;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+
+  .rung {
+    margin-top: 26px;
+    padding-top: 24px;
+    border-top: 1px dotted var(--line);
+  }
+
+  .rung:first-of-type { margin-top: 18px; }
+
+  .rung-step {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+  }
+
+  .rung-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .rung-name {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    font-weight: 700;
+    line-height: 1.05;
+  }
+
+  .leader {
+    flex: 1;
+    min-width: 18px;
+    border-bottom: 2px dotted var(--line);
+    transform: translateY(-0.28em);
+  }
+
+  .price {
+    color: var(--tomato);
+    font-size: 1.05rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .price .per {
+    color: var(--ink-soft);
+    font-size: 0.78em;
+    font-weight: 700;
+  }
+
+  .rung-outcome {
+    margin-top: 10px;
+    max-width: 36rem;
+    font-size: 0.97rem;
+  }
+
+  .rung-meta {
+    margin-top: 12px;
+    display: grid;
+    gap: 6px;
+    max-width: 36rem;
+  }
+
+  .rung-meta div {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 10px;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+  }
+
+  .rung-meta dt,
+  .rung-meta .k {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    padding-top: 0.22em;
+  }
+
+  .rung-meta .teeth { color: var(--ink); }
+
+  .rung-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 10px 20px;
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 150ms ease-out, background-color 150ms ease-out, color 150ms ease-out;
+  }
+
+  .btn.primary {
+    background: var(--tomato);
+    border-color: var(--tomato);
+    color: #fffdf8;
+  }
+
+  .btn.quiet { color: var(--ink); }
+
+  .note {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  .receipts {
+    padding: clamp(26px, 6vw, 46px) clamp(20px, 6vw, 56px);
+    background: var(--wash);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .receipts h2 {
+    margin-top: 6px;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    font-weight: 700;
+  }
+
+  .receipt-list { margin-top: 14px; }
+
+  .receipt {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 4px 14px;
+    padding: 12px 0;
+    border-bottom: 1px dotted var(--line);
+    text-decoration: none;
+  }
+
+  .receipt:last-child { border-bottom: 0; }
+
+  .receipt .r-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .receipt .r-date {
+    color: var(--cobalt);
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    align-self: start;
+    padding-top: 0.2em;
+  }
+
+  .receipt .r-desc {
+    grid-column: 1 / -1;
+    color: var(--ink-soft);
+    font-size: 0.86rem;
+  }
+
+  .receipts .fineprint {
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  .betabar {
+    padding: 18px clamp(20px, 6vw, 56px);
+    background: var(--room);
+    color: rgba(255, 253, 248, 0.92);
+    font-size: 0.88rem;
+  }
+
+  .betabar b { color: #fffdf8; }
+
+  .betabar a {
+    color: #fffdf8;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  footer {
+    padding: 30px clamp(20px, 6vw, 56px) 38px;
+    background: var(--paper);
+  }
+
+  .motto {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-style: italic;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    margin-top: 16px;
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+  }
+
+  .footer-links a {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--line);
+    text-underline-offset: 4px;
+    transition: color 150ms ease-out, text-decoration-color 150ms ease-out;
+  }
+
+  .builtby {
+    margin-top: 16px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  .builtby a { color: inherit; }
+
+  a:focus-visible,
+  .btn:focus-visible {
+    outline: 3px solid var(--brass);
+    outline-offset: 3px;
+  }
+
+  @media (hover: hover) {
+    .btn:hover { transform: translateY(-2px); }
+    .btn.quiet:hover { background: var(--wash); }
+    .footer-links a:hover,
+    .receipt:hover .r-name {
+      color: var(--tomato);
+      text-decoration-color: var(--tomato);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  @media (max-width: 560px) {
+    body { padding: 10px 8px 28px; }
+    .rung-top { flex-wrap: wrap; }
+    .leader { display: none; }
+    .rung-meta div { grid-template-columns: 1fr; gap: 2px; }
+    .btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+  <header class="cover">
+    <p class="kicker">One menu, one Adam</p>
+    <h1 class="wordmark">adam<span class="dot">.</span>inc</h1>
+    <p class="tagline">Hire my hands. Three offers. Every price is upfront.</p>
+    <p class="intro"><b>I am Adam Pang.</b> I build small, sharp software fast, with a brigade of AI agents doing the boring parts. This page sells the one thing that does not scale: me, working on your thing. Start with an hour, graduate to a sprint, keep it alive monthly.</p>
+    <!-- FOUNDER: FACE PHOTO. No real photo asset exists in this repo, so nothing
+         was fabricated. Save a real photo as shots/adam.jpg in BOTH menu folders
+         (adam.inc and adam.gives), then uncomment this block.
+    <div class="face">
+      <img src="shots/adam.jpg" width="112" height="112" alt="Adam Pang">
+      <span class="intro" style="margin-top:0">That is me. The whole team photo.</span>
+    </div>
+    -->
+    <p class="supply"><span>there is exactly one of me</span><span>so the menu is short</span></p>
+  </header>
+
+  <section class="menu" aria-labelledby="menu-title">
+    <div class="menu-head">
+      <p class="kicker">The menu</p>
+      <h2 id="menu-title">Three rungs</h2>
+      <p>Each rung earns the next. The hour proves it works. The sprint ships the real thing. The continuation keeps it alive.</p>
+    </div>
+
+    <article class="rung" aria-labelledby="rung-hour">
+      <p class="rung-step">Rung one</p>
+      <div class="rung-top">
+        <h3 class="rung-name" id="rung-hour">Power hour</h3>
+        <span class="leader"></span>
+        <span class="price">fixed price</span>
+      </div>
+      <p class="rung-outcome">Your thing, unstuck. One live call, we build on your actual problem together, and you keep everything we make.</p>
+      <div class="rung-meta">
+        <div><span class="k">window</span><span>Booked within the week. Done in one hour.</span></div>
+        <div><span class="k">effort</span><span>One email, one call. Bring the one thing.</span></div>
+        <div><span class="k">guarantee</span><span class="teeth">If the hour ships nothing you can point at, it is free.</span></div>
+      </div>
+      <div class="rung-cta">
+        <!-- FOUNDER: POWER HOUR LINK + PRICE. The Stripe product "Build with me
+             power hour" already exists (keep:true). Its price and payment link
+             appear nowhere in this repo and were not guessed. Paste the existing
+             buy.stripe.com link as a .btn.primary here, put the real number in
+             the .price span above, and mirror the change into the adam.gives
+             folder. Details: MENU_inventory.md, founder decisions 1 and 2. -->
+        <a class="btn primary" href="mailto:adamtpang@gmail.com?subject=power%20hour&amp;body=The%20one%20thing%20I%20want%20unstuck%3A%20">Book the hour by email</a>
+      </div>
+      <p class="note">The whole price is in my first reply, before you say yes to anything.</p>
+    </article>
+
+    <article class="rung" aria-labelledby="rung-sprint">
+      <p class="rung-step">Rung two</p>
+      <div class="rung-top">
+        <h3 class="rung-name" id="rung-sprint">Build sprint</h3>
+        <span class="leader"></span>
+        <span class="price">$1,500</span>
+      </div>
+      <p class="rung-outcome">The one thing you have wanted built, shipped working in about 7 days, live at a URL you own. You own the code, the repo, and the deploy.</p>
+      <div class="rung-meta">
+        <div><span class="k">window</span><span>Scoped same day. Shipped in about 7 days, with daily progress notes.</span></div>
+        <div><span class="k">effort</span><span>One email, one scope doc. No meetings.</span></div>
+        <div><span class="k">guarantee</span><span class="teeth">The $750 deposit books your slot. If I miss the scope we agreed, you never pay the remainder.</span></div>
+      </div>
+      <div class="rung-cta">
+        <a class="btn primary" href="https://buy.stripe.com/bJe6oH6UW68BaEwgl3aMU0p" target="_blank" rel="noopener">Pay the $750 deposit</a>
+        <a class="btn quiet" href="mailto:adamtpang@gmail.com?subject=sprint&amp;body=The%20one%20thing%20I%20want%20built%3A%20">Tell me the one thing first</a>
+      </div>
+      <p class="note">First three sprints at $750 flat in exchange for a case study. Same link, and the deposit is the whole price.</p>
+    </article>
+
+    <article class="rung" aria-labelledby="rung-cont">
+      <p class="rung-step">Rung three, for sprint graduates</p>
+      <div class="rung-top">
+        <h3 class="rung-name" id="rung-cont">Continuation</h3>
+        <span class="leader"></span>
+        <span class="price">monthly</span>
+      </div>
+      <p class="rung-outcome">The thing we shipped stays alive and keeps improving. Fixes, updates, and one new improvement every month, without you managing anyone.</p>
+      <div class="rung-meta">
+        <div><span class="k">window</span><span>Starts the day your sprint ships. Every month ends with a shipped-changes note.</span></div>
+        <div><span class="k">effort</span><span>Nothing to run. You read one note a month.</span></div>
+        <div><span class="k">guarantee</span><span class="teeth">A month whose shipped-changes note is empty is free. Cancel anytime with one email.</span></div>
+      </div>
+      <div class="rung-cta">
+        <!-- FOUNDER: CONTINUATION LINK + PRICE. The Stripe product "AI Build
+             Sprint Continuation" already exists (keep:true). Its monthly price
+             and payment link appear nowhere in this repo and were not guessed.
+             Paste the existing buy.stripe.com link as a .btn.primary here, put
+             the real number in the .price span above (pattern: $N<span
+             class="per">/mo</span>), and mirror into adam.gives. Details:
+             MENU_inventory.md, founder decisions 3 and 4. -->
+        <a class="btn primary" href="mailto:adamtpang@gmail.com?subject=continuation&amp;body=The%20sprint%20to%20keep%20alive%3A%20">Start the continuation by email</a>
+      </div>
+      <p class="note">Whole monthly price in my first reply. It never starts without a shipped sprint to continue.</p>
+    </article>
+  </section>
+
+  <section class="receipts" aria-labelledby="receipts-title">
+    <p class="kicker">The receipts</p>
+    <h2 id="receipts-title">Real things, real dates</h2>
+
+    <div class="receipt-list">
+      <a class="receipt" href="https://moneymeta.fun" target="_blank" rel="noopener">
+        <span class="r-name">moneymeta.fun</span>
+        <span class="r-date">Aug 2026</span>
+        <span class="r-desc">A live data product ranking every way to make money, designed and shipped solo in days. Weekly report issues since Aug 1, 2026.</span>
+      </a>
+      <a class="receipt" href="https://deathmoney.fyi" target="_blank" rel="noopener">
+        <span class="r-name">deathmoney.fyi</span>
+        <span class="r-date">Jul 2026</span>
+        <span class="r-desc">The financial freedom number calculator. Free, no signup, live.</span>
+      </a>
+      <a class="receipt" href="/studio">
+        <span class="r-name">the studio</span>
+        <span class="r-date">Jul 2026</span>
+        <span class="r-desc">43 live products from one pair of hands and a brigade of agents. Every tile opens the real thing.</span>
+      </a>
+      <a class="receipt" href="https://github.com/adamtpang/adam.gives" target="_blank" rel="noopener">
+        <span class="r-name">this menu</span>
+        <span class="r-date">Jul 2026</span>
+        <span class="r-desc">First version live Jul 12, 2026. Rebuilt as the one menu Aug 1, 2026. Source public on GitHub.</span>
+      </a>
+    </div>
+
+    <!-- EVIDENCE SLOT (ships empty on purpose). When a real client testimonial
+         exists, render it here with the person's name, the date, and a link to
+         the shipped thing. Until then this section stays receipts-only.
+         Never fabricate a testimonial or a logo. -->
+
+    <p class="fineprint">No testimonials up there yet because I do not invent them. The links are the proof for now.</p>
+  </section>
+
+  <div class="betabar">
+    <b>Beta bar.</b> This menu is new and run by one human. If a link misbehaves, or you want a person before a price, email <a href="mailto:adamtpang@gmail.com">adamtpang@gmail.com</a> or take the free 15 minutes at <a href="https://cal.com/adamtpang" target="_blank" rel="noopener">cal.com/adamtpang</a>.
+  </div>
+
+  <footer>
+    <p class="motto">Every price is the whole price. Every gift is a whole gift.</p>
+    <p class="footer-links">
+      <a href="https://adampang.com" target="_blank" rel="noopener">adampang.com</a>
+      <a href="/studio">the studio</a>
+      <a href="/playbook">the playbook</a>
+      <a href="/terms">terms</a>
+      <a href="/privacy">privacy</a>
+      <a href="https://github.com/adamtpang/adam.gives" target="_blank" rel="noopener">source</a>
+    </p>
+    <p class="builtby"><a href="https://adam.gives" rel="author">built by adam.inc</a></p>
+  </footer>
+</main>
+</body>
+</html>
