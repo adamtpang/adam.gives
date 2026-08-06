@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>adam.inc — a little indie studio</title>
+<meta name="description" content="43 small, sharp products. Every one has a price or a door. Built by Adam Pang with Claude agents.">
+<link rel="canonical" href="https://adam.gives/studio">
+<meta name="theme-color" content="#07080c">
+<meta property="og:title" content="adam.inc — a little indie studio">
+<meta property="og:description" content="43 small, sharp products. Every one has a price or a door.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://adam.gives/studio">
+<meta property="og:image" content="https://adam.gives/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07080c; --panel:#0f1118; --panel2:#12141d; --line:#232634;
+    --ink:#eef0f6; --mut:#8b90a3;
+    --cyan:#3ad4ff; --violet:#8b7bff; --magenta:#ff5ce1; --lime:#a6ff4d; --amber:#ffb545; --coral:#ff6b5c; --teal:#2fe3b8; --blue:#5b8cff; --pink:#ff8fc4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:var(--bg); color:var(--ink); font-family:"Inter",-apple-system,"Segoe UI",sans-serif; line-height:1.5;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px);
+    background-size:46px 46px;
+  }
+  .glow{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0}
+  .g1{top:-14vh;left:8vw;width:52vw;height:42vh;background:rgba(139,123,255,0.30)}
+  .g2{top:6vh;right:2vw;width:40vw;height:34vh;background:rgba(47,227,184,0.16)}
+  .g3{top:52vh;left:-8vw;width:44vw;height:34vh;background:rgba(255,92,225,0.12)}
+  .wrap{position:relative;z-index:1;max-width:1140px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:16px;flex-wrap:wrap}
+  .mark{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-0.01em;text-decoration:none;color:var(--ink);
+    border:1px solid var(--violet);border-radius:999px;padding:6px 16px;box-shadow:0 0 18px rgba(139,123,255,0.35), inset 0 0 14px rgba(139,123,255,0.14)}
+  .mark .d{color:var(--magenta)}
+  .navlinks{display:flex;gap:20px;font-size:0.9rem}
+  .navlinks a{color:var(--mut);text-decoration:none;transition:color .15s}
+  .navlinks a:hover{color:var(--ink)}
+
+  header.hero{padding:clamp(48px,10vw,110px) 0 clamp(38px,7vw,70px);text-align:center}
+  .eyebrow{font-family:"Space Grotesk",sans-serif;font-size:0.76rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--cyan);margin-bottom:20px}
+  h1{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:clamp(2.6rem,8.5vw,5.4rem);line-height:0.98;letter-spacing:-0.035em}
+  h1 .l2{background:linear-gradient(92deg,var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+  h1 .l3{background:linear-gradient(92deg,var(--violet),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--mut);font-size:clamp(1rem,2.2vw,1.18rem);margin:22px auto 0;max-width:34rem}
+  .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .btn{text-decoration:none;font-weight:600;font-size:0.98rem;padding:12px 26px;border-radius:999px;transition:transform .15s, filter .15s}
+  .btn.primary{background:linear-gradient(92deg,var(--cyan),var(--violet));color:#07080c}
+  .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+  .btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+  .btn:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+
+  .stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+  .stat{border:1px solid var(--line);background:rgba(255,255,255,0.02);border-radius:999px;padding:6px 16px;font-size:0.82rem;color:var(--mut)}
+  .stat b{color:var(--ink)}
+
+  section{padding:clamp(34px,6vw,64px) 0}
+  .shead{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:22px;
+    padding-bottom:14px;border-bottom:1px solid var(--line)}
+  .shead h2{font-family:"Space Grotesk",sans-serif;font-size:clamp(1.5rem,4vw,2.1rem);letter-spacing:-0.02em}
+  .shead p{color:var(--mut);font-size:0.88rem}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .card{
+    position:relative;display:flex;flex-direction:column;gap:6px;text-decoration:none;color:inherit;
+    background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;min-height:132px;
+    overflow:hidden;transition:transform .16s ease, border-color .16s ease, background .16s ease;
+  }
+  .card::after{content:"";position:absolute;inset:auto -30% -60% -30%;height:120px;background:var(--ac);opacity:.13;filter:blur(38px);transition:opacity .16s}
+  .card:hover{transform:translateY(-4px);border-color:var(--ac);background:var(--panel2)}
+  .card:hover::after{opacity:.26}
+  .card:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+  .cname{position:relative;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.16rem;letter-spacing:-0.02em;color:var(--ac);line-height:1.15}
+  .cdesc{position:relative;color:var(--mut);font-size:0.83rem;line-height:1.4;flex:1}
+  .crow{position:relative;display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+  .tag{font-family:"Space Grotesk",sans-serif;font-size:0.76rem;font-weight:700;color:var(--ink)}
+  .tag.free{color:var(--teal)}
+  .host{font-size:0.68rem;color:#5c6175;font-family:ui-monospace,Consolas,monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+  footer{padding:46px 0 60px;border-top:1px solid var(--line);margin-top:30px;text-align:center}
+  .motto{font-family:"Space Grotesk",sans-serif;font-size:clamp(1rem,2.4vw,1.25rem)}
+  .flinks{margin-top:14px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap;font-size:0.88rem}
+  .flinks a{color:var(--mut);text-decoration:none}
+  .flinks a:hover{color:var(--cyan)}
+
+  @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:560px){ .grid{grid-template-columns:1fr} .navlinks{display:none} }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
+
+<div class="wrap">
+  <nav>
+    <a class="mark" href="/studio">adam<span class="d">.</span>inc</a>
+    <div class="navlinks">
+      <a href="#buy">Products</a>
+      <a href="#free">Free stuff</a>
+      <a href="/playbook">Playbook</a>
+      <a href="/">The menu</a>
+      <a href="https://adampang.com">About</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <p class="eyebrow">a little indie studio</p>
+    <h1>I ship<br><span class="l2">small, sharp,</span><br><span class="l3">finished things.</span></h1>
+    <p class="sub">Micro SaaS, calculators, tools, and games. One job each, done properly. Built by one person and a brigade of Claude agents.</p>
+    <div class="ctas">
+      <a class="btn primary" href="#buy">See the products</a>
+      <a class="btn ghost" href="https://cal.com/adamtpang">Get in touch</a>
+    </div>
+    <div class="stats">
+      <span class="stat"><b>43</b> live</span>
+      <span class="stat"><b>20</b> with a register</span>
+      <span class="stat"><b>0</b> unfinished</span>
+    </div>
+  </header>
+
+  <section id="buy">
+    <div class="shead">
+      <h2>Things you can buy</h2>
+      <p>price stated upfront, always</p>
+    </div>
+    <div class="grid">
+      <a class="card" style="--ac:var(--violet)" href="/playbook"><span class="cname">The Agent Storefront</span><span class="cdesc">The playbook: how I put a paying register on 43 products with Claude agents.</span><span class="crow"><span class="tag">$29</span><span class="host">adam.gives/playbook</span></span></a>
+      <a class="card" style="--ac:var(--cyan)" href="https://anchormarianas.com"><span class="cname">Anchor Marianas</span><span class="cdesc">Flat-rate 5 day websites and AI review scans for small businesses.</span><span class="crow"><span class="tag">$497 / $1,997</span><span class="host">anchormarianas.com</span></span></a>
+      <a class="card" style="--ac:var(--coral)" href="https://sellsniper.com"><span class="cname">SellSniper</span><span class="cdesc">50 warm B2B leads, done for you, with a money-back guarantee.</span><span class="crow"><span class="tag">$500</span><span class="host">sellsniper.com</span></span></a>
+      <a class="card" style="--ac:var(--teal)" href="https://everybot.fun"><span class="cname">Everybot</span><span class="cdesc">A done-for-you AI assistant that reclaims 10 to 15 hours a week.</span><span class="crow"><span class="tag">$1,500/mo</span><span class="host">everybot.fun</span></span></a>
+      <a class="card" style="--ac:var(--amber)" href="https://companyuniversity.vercel.app"><span class="cname">Company College</span><span class="cdesc">A corporate training college run inside your company. Miss the bar, don't pay.</span><span class="crow"><span class="tag">$60,000</span><span class="host">company college pilot</span></span></a>
+      <a class="card" style="--ac:var(--lime)" href="https://deathmoney.fyi"><span class="cname">deathmoney</span><span class="cdesc">Your freedom number: the amount you need to never worry about money again.</span><span class="crow"><span class="tag">$19</span><span class="host">deathmoney.fyi</span></span></a>
+      <a class="card" style="--ac:var(--blue)" href="https://beware.dog"><span class="cname">beware.dog</span><span class="cdesc">AI plus human-verified cyber threat monitoring for small businesses.</span><span class="crow"><span class="tag">$149/mo</span><span class="host">beware.dog</span></span></a>
+      <a class="card" style="--ac:var(--magenta)" href="https://youchop.app"><span class="cname">YouChop</span><span class="cdesc">Real, clickable chapters on any YouTube video, in YouTube's own player.</span><span class="crow"><span class="tag">$99</span><span class="host">youchop.app</span></span></a>
+      <a class="card" style="--ac:var(--pink)" href="https://summon.guide"><span class="cname">summon.guide</span><span class="cdesc">Bring any life problem, get matched with the human best suited to mentor you.</span><span class="crow"><span class="tag">$9/mo</span><span class="host">summon.guide</span></span></a>
+      <a class="card" style="--ac:var(--violet)" href="https://sprite.email"><span class="cname">sprite.email</span><span class="cdesc">The AI inbox for people running three or more gmail accounts.</span><span class="crow"><span class="tag">$79 founding</span><span class="host">sprite.email</span></span></a>
+      <a class="card" style="--ac:var(--teal)" href="https://pokedex.life"><span class="cname">pokedex.life</span><span class="cdesc">A personal CRM: everyone you know becomes a stat card.</span><span class="crow"><span class="tag">$59 founding</span><span class="host">pokedex.life</span></span></a>
+      <a class="card" style="--ac:var(--amber)" href="https://darktalent.tech"><span class="cname">darktalent</span><span class="cdesc">Moneyball style scouting. Rate the legends, build your dream squad.</span><span class="crow"><span class="tag">$59 founding</span><span class="host">darktalent.tech</span></span></a>
+      <a class="card" style="--ac:var(--cyan)" href="https://portal.voyage"><span class="cname">portal.voyage</span><span class="cdesc">Where on earth should you live? Cities ranked by cost, career and people.</span><span class="crow"><span class="tag">$49 founding</span><span class="host">portal.voyage</span></span></a>
+      <a class="card" style="--ac:var(--coral)" href="https://archimedes.life"><span class="cname">archimedes</span><span class="cdesc">You don't have an effort problem, you have a leverage problem. Find which.</span><span class="crow"><span class="tag">$49 founding</span><span class="host">archimedes.life</span></span></a>
+      <a class="card" style="--ac:var(--lime)" href="https://sitefast.pro"><span class="cname">sitefast.pro</span><span class="cdesc">Stop losing the customers who leave because your site is slow.</span><span class="crow"><span class="tag">$49 founding</span><span class="host">sitefast.pro</span></span></a>
+      <a class="card" style="--ac:var(--pink)" href="https://strummer.fun"><span class="cname">strummer</span><span class="cdesc">The player where artists keep what they earn. Own your library.</span><span class="crow"><span class="tag">$49 founding</span><span class="host">strummer.fun</span></span></a>
+      <a class="card" style="--ac:var(--blue)" href="https://8020.best"><span class="cname">8020.best</span><span class="cdesc">Dump your tasks, AI sorts the vital 20 percent that drives the rest.</span><span class="crow"><span class="tag">$39 founding</span><span class="host">8020.best</span></span></a>
+      <a class="card" style="--ac:var(--magenta)" href="https://vitals.run"><span class="cname">vitals.run</span><span class="cdesc">One screen per company: the vital signs and the single next move on each.</span><span class="crow"><span class="tag">$29 founding</span><span class="host">vitals.run</span></span></a>
+      <a class="card" style="--ac:var(--teal)" href="https://moneymeta.fun"><span class="cname">moneymeta</span><span class="cdesc">A tier list of every wealth vehicle, ranked by a score from public data.</span><span class="crow"><span class="tag">$29 founding</span><span class="host">moneymeta.fun</span></span></a>
+      <a class="card" style="--ac:var(--amber)" href="https://themain.quest"><span class="cname">the main quest</span><span class="cdesc">Your one life, gamified. Days are XP. Close the boss.</span><span class="crow"><span class="tag">$29 founding</span><span class="host">themain.quest</span></span></a>
+      <a class="card" style="--ac:var(--violet)" href="https://countriesmarketcap.com"><span class="cname">countries market cap</span><span class="cdesc">Every country ranked by national net wealth, CoinMarketCap style.</span><span class="crow"><span class="tag">$29 founding</span><span class="host">countriesmarketcap.com</span></span></a>
+      <a class="card" style="--ac:var(--cyan)" href="https://skill.supply"><span class="cname">skill.supply</span><span class="cdesc">A marketplace for the skills people actually pay for.</span><span class="crow"><span class="tag">$29 founding</span><span class="host">skill.supply</span></span></a>
+      <a class="card" style="--ac:var(--coral)" href="https://asap.deals"><span class="cname">asap.deals</span><span class="cdesc">A modern interdealer broker. Submit your deal, we work the middle.</span><span class="crow"><span class="tag">commission</span><span class="host">asap.deals</span></span></a>
+      <a class="card" style="--ac:var(--lime)" href="https://tabula.asia"><span class="cname">Tabula</span><span class="cdesc">Live event production. Sound, light and staging across Southeast Asia.</span><span class="crow"><span class="tag">custom</span><span class="host">tabula.asia</span></span></a>
+    </div>
+  </section>
+
+  <section id="free">
+    <div class="shead">
+      <h2>On the house</h2>
+      <p>free, no strings, nothing to sign up for</p>
+    </div>
+    <div class="grid">
+      <a class="card" style="--ac:var(--teal)" href="https://anchormarianas.com/scan"><span class="cname">AnchorScan</span><span class="cdesc">An honest 45 second AI read on what your website is costing you.</span><span class="crow"><span class="tag free">free</span><span class="host">anchormarianas.com/scan</span></span></a>
+      <a class="card" style="--ac:var(--cyan)" href="https://sellsniper.com/scan"><span class="cname">Find your people</span><span class="cdesc">Paste any link, get the ten rooms where its people already hang out.</span><span class="crow"><span class="tag free">free</span><span class="host">sellsniper.com/scan</span></span></a>
+      <a class="card" style="--ac:var(--violet)" href="https://cal.com/adamtpang"><span class="cname">15 minutes with me</span><span class="cdesc">Bring any problem. I will help you find the shortest honest next move.</span><span class="crow"><span class="tag free">free</span><span class="host">cal.com/adamtpang</span></span></a>
+      <a class="card" style="--ac:var(--lime)" href="https://lightmark.app"><span class="cname">lightmark</span><span class="cdesc">Is your site visible to AI search engines? Find out in one scan.</span><span class="crow"><span class="tag free">free</span><span class="host">lightmark.app</span></span></a>
+      <a class="card" style="--ac:var(--amber)" href="https://300words.app"><span class="cname">300words</span><span class="cdesc">Write 300 words a day. Keep the streak. That is the whole app.</span><span class="crow"><span class="tag free">free</span><span class="host">300words.app</span></span></a>
+      <a class="card" style="--ac:var(--magenta)" href="https://optimism.fun"><span class="cname">optimism.fun</span><span class="cdesc">Humanity's biggest problems, ranked and mapped to startup opportunities.</span><span class="crow"><span class="tag free">free</span><span class="host">optimism.fun</span></span></a>
+      <a class="card" style="--ac:var(--blue)" href="https://worldcupelo.com"><span class="cname">World Cup Elo</span><span class="cdesc">Live Elo ratings for every national team heading into the 2026 World Cup.</span><span class="crow"><span class="tag free">free</span><span class="host">worldcupelo.com</span></span></a>
+      <a class="card" style="--ac:var(--pink)" href="https://zcash.school"><span class="cname">zcash.school</span><span class="cdesc">Private money explained from scratch. Enrollment open, attendance anonymous.</span><span class="crow"><span class="tag free">free</span><span class="host">zcash.school</span></span></a>
+      <a class="card" style="--ac:var(--teal)" href="https://vercel.school"><span class="cname">vercel.school</span><span class="cdesc">Six lessons on shipping. Taught by someone who shipped 43 things.</span><span class="crow"><span class="tag free">free</span><span class="host">vercel.school</span></span></a>
+      <a class="card" style="--ac:var(--coral)" href="https://conjecture.school"><span class="cname">conjecture.school</span><span class="cdesc">Nineteen lectures on critical rationalism. Every lecture a conjecture.</span><span class="crow"><span class="tag free">free</span><span class="host">conjecture.school</span></span></a>
+      <a class="card" style="--ac:var(--violet)" href="https://interneta.world"><span class="cname">interneta</span><span class="cdesc">A federation of internet city states. Cloud first, land last.</span><span class="crow"><span class="tag free">free</span><span class="host">interneta.world</span></span></a>
+      <a class="card" style="--ac:var(--amber)" href="https://adamanack.com"><span class="cname">Poor Adam's Almanack</span><span class="cdesc">Notes from a life under construction. A free book of collected maxims.</span><span class="crow"><span class="tag free">free</span><span class="host">adamanack.com</span></span></a>
+      <a class="card" style="--ac:var(--cyan)" href="https://pangaea.blog"><span class="cname">Pangaea</span><span class="cdesc">A publication for long conversations, released in seasons.</span><span class="crow"><span class="tag free">free</span><span class="host">pangaea.blog</span></span></a>
+      <a class="card" style="--ac:var(--lime)" href="https://technodemocracy.app"><span class="cname">technodemocracy</span><span class="cdesc">Join a digital party. Grant a binding, scoped, revocable authority.</span><span class="crow"><span class="tag free">free</span><span class="host">technodemocracy.app</span></span></a>
+      <a class="card" style="--ac:var(--blue)" href="https://iron.credit"><span class="cname">iron.credit</span><span class="cdesc">The non-custodial bitcoin credit card. Borrow dollars against your bitcoin.</span><span class="crow"><span class="tag free">soon</span><span class="host">iron.credit</span></span></a>
+      <a class="card" style="--ac:var(--magenta)" href="https://eyeland.cards"><span class="cname">eyeland</span><span class="cdesc">An open world card combat game across floating islands.</span><span class="crow"><span class="tag free">soon</span><span class="host">eyeland.cards</span></span></a>
+      <a class="card" style="--ac:var(--pink)" href="https://wonderhall.live"><span class="cname">Wonderhall</span><span class="cdesc">A live music night. Every even month, real instruments, real people.</span><span class="crow"><span class="tag free">free</span><span class="host">wonderhall.live</span></span></a>
+      <a class="card" style="--ac:var(--teal)" href="https://arcarena.xyz"><span class="cname">Arc Arena</span><span class="cdesc">A 36 hour hackathon where problems meet talent meets capital.</span><span class="crow"><span class="tag free">free</span><span class="host">arcarena.xyz</span></span></a>
+    </div>
+  </section>
+
+  <footer>
+    <p class="motto">Every price is the whole price. Every gift is a whole gift.</p>
+    <p class="flinks">
+      <a href="/">the menu</a>
+      <a href="/playbook">the playbook</a>
+      <a href="https://adampang.com">adampang.com</a>
+      <a href="https://cal.com/adamtpang">say hello</a>
+    </p>
+  </footer>
+</div>
+</body>
+</html>

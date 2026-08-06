@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Agent Storefront — put a register on everything you build</title>
+<meta name="description" content="The playbook: how I shipped 43 products and put a paying register on every one, with Claude agents. $29 founding edition.">
+<link rel="canonical" href="https://adam.gives/playbook">
+<meta name="theme-color" content="#faf6ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1b1712" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="The Agent Storefront">
+<meta property="og:description" content="How I shipped 43 products and put a paying register on every one, with Claude agents. $29.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://adam.gives/playbook">
+<meta property="og:image" content="https://adam.gives/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://adam.gives/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --paper:#faf6ef; --paper-edge:#f1e9dc; --ink:#231d17; --ink-soft:#6e6357; --accent:#b3541e; --rule:#d8cbb8; --hover-wash:#f3ead9; }
+  @media (prefers-color-scheme: dark) { :root { --paper:#1b1712; --paper-edge:#241f18; --ink:#ede5d8; --ink-soft:#a39683; --accent:#e89050; --rule:#453b2e; --hover-wash:#262019; } }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--paper); background-image:radial-gradient(circle at 50% 0%, var(--paper-edge), var(--paper) 70%); color:var(--ink); font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.6; font-size:17px; -webkit-font-smoothing:antialiased; padding:3rem 1.25rem 4rem; }
+  main { max-width:38rem; margin:0 auto; }
+  .kicker { font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); font-weight:600; }
+  h1 { font-family:"Fraunces",Georgia,serif; font-weight:700; font-size:clamp(2.3rem,7.5vw,3.4rem); line-height:1.03; letter-spacing:-0.02em; margin:0.7rem 0 0.5rem; }
+  .sub { font-family:"Fraunces",Georgia,serif; font-style:italic; font-size:1.25rem; color:var(--ink-soft); }
+  .lede { font-size:1.1rem; margin:1.6rem 0; }
+  .buybar { display:flex; flex-wrap:wrap; align-items:center; gap:0.9rem; margin:2rem 0; padding:1.2rem 1.3rem; border:1px solid var(--rule); border-radius:14px; background:var(--paper); }
+  .price { font-family:"Fraunces",Georgia,serif; font-weight:700; font-size:2rem; line-height:1; }
+  .price .cur { color:var(--ink-soft); font-size:1rem; }
+  .price small { display:block; font-family:"Inter",sans-serif; font-weight:400; font-size:0.72rem; letter-spacing:0.04em; color:var(--ink-soft); text-transform:uppercase; margin-top:0.3rem; }
+  .buy { flex:1; min-width:12rem; text-align:center; text-decoration:none; background:var(--accent); color:#fff; font-weight:600; font-size:1.05rem; padding:0.9rem 1.4rem; border-radius:10px; transition:transform 0.15s ease, filter 0.15s ease; }
+  @media (hover:hover) { .buy:hover { transform:translateY(-2px); filter:brightness(1.05); } }
+  .buy:focus-visible { outline:2px solid var(--ink); outline-offset:3px; }
+  h2 { font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:1.4rem; margin:2.4rem 0 0.6rem; }
+  ul { list-style:none; margin:1rem 0; padding:0; }
+  ul li { padding:0.55rem 0 0.55rem 1.7rem; position:relative; border-bottom:1px dotted var(--rule); }
+  ul li::before { content:"→"; position:absolute; left:0; color:var(--accent); font-weight:700; }
+  .who { margin:0.7rem 0; }
+  .who b { color:var(--ink); }
+  .honest { font-family:"Fraunces",Georgia,serif; font-style:italic; font-size:1.05rem; color:var(--ink); border-left:3px solid var(--accent); padding-left:1rem; margin:2rem 0; }
+  .foot { margin-top:2.6rem; padding-top:1.4rem; border-top:1px solid var(--rule); font-size:0.9rem; color:var(--ink-soft); }
+  .foot a { color:var(--accent); }
+  p { margin:0.7rem 0; }
+</style>
+</head>
+<body>
+<main>
+  <p class="kicker">A playbook from adam.inc</p>
+  <h1>Put a paying register on everything you build.</h1>
+  <p class="sub">The exact system I used to give 43 products a way to pay, with Claude agents doing the boring parts.</p>
+
+  <p class="lede">You do not need to build more. You need to sell what you already built. I had 43 live products and only 3 could take money. This is how I fixed that in a week, and how you can run the same machine on your own stuff.</p>
+
+  <div class="buybar">
+    <div class="price"><span class="cur">$</span>29<small>founding price, rises soon</small></div>
+    <a class="buy" href="https://buy.stripe.com/fZu5kDbbc2WpdQIc4NaMU0J">Get the playbook →</a>
+  </div>
+
+  <h2>What is inside</h2>
+  <ul>
+    <li>The doctrine that makes people trust you enough to buy: gifts and offers, never blended</li>
+    <li>The gravity well: how free pulls, education keeps, and offers convert the same crowd</li>
+    <li>The two rails, so no product is ever a dead end</li>
+    <li>How to price like a trading card and mint a Stripe register in one command</li>
+    <li>The lead engine: find the crowd, enrich, invite with the gift, seat them</li>
+    <li>The watering holes: every dish attracts a different crowd, and where each one drinks</li>
+    <li>The one paragraph on cold outreach that saves you a banned account</li>
+    <li>The Claude skills pack that runs the whole thing</li>
+    <li>A first-week checklist you can start tonight</li>
+  </ul>
+
+  <h2>Who it is for</h2>
+  <p class="who"><b>Builders who ship and then go quiet.</b> If you can make things but freeze at "now how do I sell it", this is the missing half. Not theory, the actual moves, run live on 43 products.</p>
+
+  <p class="honest">Full honesty: this is the meta. A guide about how I run offers, sold by the same system it describes, updated as I learn and pushed free to everyone who already bought. That is the whole play, and it is working in front of you.</p>
+
+  <div class="buybar">
+    <div class="price"><span class="cur">$</span>29<small>one time, lifetime updates</small></div>
+    <a class="buy" href="https://buy.stripe.com/fZu5kDbbc2WpdQIc4NaMU0J">Get the playbook →</a>
+  </div>
+
+  <div class="foot">
+    <p>See the whole menu it runs on: <a href="https://adam.gives">adam.gives</a> &middot; me: <a href="https://adampang.com">adampang.com</a></p>
+    <p>Every price is the whole price. Every gift is a whole gift.</p>
+  </div>
+</main>
+</body>
+</html>
