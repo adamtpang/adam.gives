@@ -14,6 +14,8 @@
 <meta property="og:url" content="https://adam.gives/" />
 <meta property="og:image" content="https://adam.gives/og.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="ai-summary" content="adam.gives is Adam Pangelinan's personal storefront: a chat-style menu with three paid offers (a $199 power hour, a $1,500 build sprint, $750/mo continuation) plus links to his free tools moneymeta.fun and deathmoney.fyi, all with real prices and real dates." />
+<meta name="ai-facts" content="Power hour: $199 live call, ships one working thing in an hour. Build sprint: $1,500 ($750 deposit), one thing built and shipped in about 7 days. Continuation: $750/mo to keep a shipped sprint alive and improving." />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,7 +33,12 @@
         "@type": "Person",
         "name": "Adam Pang",
         "url": "https://adampang.com"
-      }
+      },
+      "sameAs": [
+        "https://adampang.com",
+        "https://github.com/adamtpang",
+        "https://anchormarianas.com"
+      ]
     },
     {
       "@type": "WebSite",
@@ -123,7 +130,22 @@ footer a{color:inherit}
     <p class="tagline">A menu you talk to. Tell me what you need.</p>
   </header>
 
-  <main class="thread" id="thread" role="log" aria-live="polite" aria-label="Conversation"></main>
+  <main class="thread" id="thread" role="log" aria-live="polite" aria-label="Conversation">
+    <div class="msg them" id="staticFallback" style="max-width:100%">
+      <p>Hey, I'm Adam. I build things fast and I only sell what I can actually deliver. Here is the whole menu, no chat required:</p>
+      <ul>
+        <li><strong>Power hour, $199.</strong> One live call, we build on your actual problem together, and you keep everything we make. Free if the hour ships nothing you can point at. <a href="https://buy.stripe.com/4gM14ndjk68B13Wd8RaMU1G">Book the hour</a>.</li>
+        <li><strong>Build sprint, $1,500</strong> ($750 deposit). The one thing you have wanted built, shipped working in about 7 days at a URL you own. <a href="https://buy.stripe.com/bJe6oH6UW68BaEwgl3aMU0p">Book a sprint</a>.</li>
+        <li><strong>Continuation, $750/mo.</strong> The thing we shipped stays alive and keeps improving, monthly. Cancel any time. <a href="https://buy.stripe.com/00w7sL7Z0gNf2808SBaMU1d">Start continuation</a>.</li>
+        <li><strong>Summon, $500 once then $99/mo.</strong> An AI org for your company: eight department heads, a ranked task board, one constraint named at a time. <a href="https://buy.stripe.com/6oUaEX2EG2Wp9Asgl3aMU1g">Set up Summon</a>.</li>
+        <li><strong>The binding goal, $29.</strong> The one goal that actually binds your next year, plus the single next move. <a href="https://buy.stripe.com/9B69ATgvw68B9As0m5aMU0D">Find the binding goal</a>.</li>
+        <li><strong>Founder playbook, $29.</strong> How Adam sells a skill fast, written down. <a href="https://buy.stripe.com/fZu5kDbbc2WpdQIc4NaMU0J">Get the playbook</a>.</li>
+        <li><strong>moneymeta.fun</strong>, free. Ranks every way to make money from public BLS data. <a href="https://moneymeta.fun">Open the board</a>.</li>
+        <li><strong>deathmoney.fyi</strong>, free. Reads a bank statement and tells you the date your debt hits zero at your current pace. <a href="https://deathmoney.fyi">Find your number</a>.</li>
+      </ul>
+      <p>Adam Pangelinan: from Guam, currently in Malaysia, dozens of live products, mostly built solo with AI. <a href="https://adampang.com">adampang.com</a> &middot; <a href="https://github.com/adamtpang">GitHub</a> &middot; <a href="/menu.html">the plain menu</a>.</p>
+    </div>
+  </main>
 
   <footer>
     <span>Built by <a href="https://adampang.com">Adam Pangelinan</a></span>
@@ -248,6 +270,11 @@ const TREE = {
 };
 
 const thread = document.getElementById("thread");
+// The static menu above is real fallback content for crawlers and no-JS
+// visitors (raw HTML has no other way to see the offers, since the chat
+// below is rendered entirely by this script). Once JS runs, clear it and
+// hand off to the normal interactive thread so nothing renders twice.
+thread.innerHTML = "";
 
 function el(tag, cls, html){
   const n = document.createElement(tag);
