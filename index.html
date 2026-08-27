@@ -14,114 +14,14 @@
 <meta property="og:url" content="https://adam.gives/" />
 <meta property="og:image" content="https://adam.gives/og.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='9' y='7' width='46' height='50' rx='5' fill='%23fffdf8' stroke='%230f2a24' stroke-width='4'/%3E%3Cpath d='M19 21h26M19 32h26M19 43h18' stroke='%23c4362f' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
 <meta name="ai-summary" content="adam.gives is Adam Pangelinan's personal storefront: a chat-style menu with three paid offers (a $199 power hour, a $1,500 build sprint, $750/mo continuation) plus links to his free tools moneymeta.fun and deathmoney.fyi, all with real prices and real dates." />
 <meta name="ai-facts" content="Power hour: $199 live call, ships one working thing in an hour. Build sprint: $1,500 ($750 deposit), one thing built and shipped in about 7 days. Continuation: $750/mo to keep a shipped sprint alive and improving." />
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://adam.gives/#organization",
-      "name": "adam.inc",
-      "url": "https://adam.gives/",
-      "logo": "https://adam.gives/og.jpg",
-      "image": "https://adam.gives/og.jpg",
-      "description": "The personal storefront of Adam Pang (Adam Pangelinan). One menu, Adam as a service: three offers, every price upfront.",
-      "email": "adamtpang@gmail.com",
-      "founder": {
-        "@type": "Person",
-        "name": "Adam Pang",
-        "url": "https://adampang.com"
-      },
-      "sameAs": [
-        "https://adampang.com",
-        "https://github.com/adamtpang",
-        "https://anchormarianas.com"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://adam.gives/#website",
-      "url": "https://adam.gives/",
-      "name": "adam.gives",
-      "description": "A menu you talk to. Pick what you need and get the one thing that helps, with a real price and a real date.",
-      "publisher": { "@id": "https://adam.gives/#organization" }
-    }
-  ]
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://adam.gives/#organization","name":"Anchor Marianas LLC","alternateName":"adam.inc","url":"https://adam.gives/","logo":"https://adam.gives/og.jpg","image":"https://adam.gives/og.jpg","description":"The personal storefront of Adam Pang (Adam Pangelinan). One menu, Adam as a service: three offers, every price upfront.","email":"adam@anchormarianas.com","founder":{"@type":"Person","name":"Adam Pang","url":"https://adampang.com"},"sameAs":["https://adampang.com","https://github.com/adamtpang","https://anchormarianas.com"]},{"@type":"WebPage","@id":"https://adam.gives/#webpage","url":"https://adam.gives/","name":"adam.gives · tell me what you need","description":"A menu you talk to. Pick what you need and get the one thing that helps, with a real price and a real date.","isPartOf":{"@id":"https://adam.gives/#website"},"about":{"@id":"https://adam.gives/#organization"},"inLanguage":"en"},{"@type":"WebSite","@id":"https://adam.gives/#website","url":"https://adam.gives/","name":"adam.gives","description":"A menu you talk to. Pick what you need and get the one thing that helps, with a real price and a real date.","publisher":{"@id":"https://adam.gives/#organization"}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<style>
-:root{
-  --room:#0f2a24;--room-deep:#081b17;--paper:#fffdf8;--paper-soft:#f5f0e6;
-  --ink:#17211d;--ink-soft:#66716a;--tomato:#c4362f;--cobalt:#1f5d7a;
-  --brass:#c89d3f;--line:#d9d0bf;--wash:#f9f4ea;--shadow:0 24px 70px rgba(4,18,15,.28);
-}
-@media (prefers-color-scheme:dark){:root{
-  --room:#071815;--room-deep:#04100e;--paper:#171d1a;--paper-soft:#202823;
-  --ink:#f4efe5;--ink-soft:#b8b0a2;--tomato:#f26b5e;--cobalt:#7ab8d6;
-  --brass:#d7b768;--line:#39433d;--wash:#212a25;--shadow:0 24px 70px rgba(0,0,0,.45);
-}}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  background:var(--room);color:var(--ink);
-  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  line-height:1.6;-webkit-font-smoothing:antialiased;
-  min-height:100dvh;display:flex;flex-direction:column;align-items:center;
-  padding:clamp(16px,4vw,40px) clamp(14px,4vw,24px);
-}
-.shell{width:100%;max-width:680px;display:flex;flex-direction:column;flex:1}
-header{margin-bottom:clamp(18px,4vw,28px)}
-header h1{margin:0;display:block;font:inherit}
-.wordmark{
-  font-family:"Fraunces",Georgia,serif;font-weight:700;
-  font-size:clamp(1.5rem,4.5vw,2rem);color:var(--paper);
-  letter-spacing:-.02em;text-decoration:none;display:inline-block;
-}
-.wordmark span{color:var(--brass)}
-.tagline{color:rgba(255,253,248,.62);font-size:.95rem;margin:.35rem 0 0}
-@media (prefers-color-scheme:dark){.tagline{color:var(--ink-soft)}}
-.thread{
-  background:var(--paper);border-radius:20px;padding:clamp(16px,4vw,26px);
-  box-shadow:var(--shadow);flex:1;display:flex;flex-direction:column;gap:14px;
-}
-.msg{max-width:88%;padding:.7rem .95rem;border-radius:16px;font-size:.96rem}
-.msg.them{background:var(--wash);border:1px solid var(--line);border-bottom-left-radius:5px;align-self:flex-start}
-.msg.me{background:var(--room);color:var(--paper);border-bottom-right-radius:5px;align-self:flex-end}
-@media (prefers-color-scheme:dark){.msg.me{background:var(--brass);color:#101512}}
-.msg p{margin:0 0 .55rem}
-.msg p:last-child{margin:0}
-.msg strong{font-weight:600}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
-.chip{
-  font:inherit;font-size:.88rem;cursor:pointer;
-  background:transparent;color:var(--ink);
-  border:1px solid var(--line);border-radius:999px;padding:.5rem .9rem;
-  transition:background .15s,border-color .15s,transform .1s;
-}
-.chip:hover{background:var(--paper-soft);border-color:var(--ink-soft)}
-.chip:active{transform:scale(.98)}
-.chip:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
-.cta{
-  display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;
-  background:var(--tomato);color:#fff;border-radius:999px;
-  padding:.55rem 1.05rem;font-size:.9rem;font-weight:600;
-}
-.cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
-.cta:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
-.price{font-family:"Fraunces",Georgia,serif;font-weight:600}
-footer{margin-top:18px;font-size:.82rem;color:rgba(255,253,248,.55);display:flex;flex-wrap:wrap;gap:.35rem 1rem}
-@media (prefers-color-scheme:dark){footer{color:var(--ink-soft)}}
-footer a{color:inherit}
-@media (prefers-reduced-motion:no-preference){
-  .msg,.chips{animation:rise .22s ease-out}
-  @keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-}
-</style>
+<link rel="stylesheet" href="/assets/index.css" />
 </head>
 <body>
 <div class="shell">
@@ -131,7 +31,7 @@ footer a{color:inherit}
   </header>
 
   <main class="thread" id="thread" role="log" aria-live="polite" aria-label="Conversation">
-    <div class="msg them" id="staticFallback" style="max-width:100%">
+    <div class="msg them static-fallback" id="staticFallback">
       <p>Hey, I'm Adam. I build things fast and I only sell what I can actually deliver. Here is the whole menu, no chat required:</p>
       <ul>
         <li><strong>Power hour, $199.</strong> One live call, we build on your actual problem together, and you keep everything we make. Free if the hour ships nothing you can point at. <a href="https://buy.stripe.com/4gM14ndjk68B13Wd8RaMU1G">Book the hour</a>.</li>
@@ -143,189 +43,29 @@ footer a{color:inherit}
         <li><strong>moneymeta.fun</strong>, free. Ranks every way to make money from public BLS data. <a href="https://moneymeta.fun">Open the board</a>.</li>
         <li><strong>deathmoney.fyi</strong>, free. Reads a bank statement and tells you the date your debt hits zero at your current pace. <a href="https://deathmoney.fyi">Find your number</a>.</li>
       </ul>
-      <p>Adam Pangelinan: from Guam, currently in Malaysia, dozens of live products, mostly built solo with AI. <a href="https://adampang.com">adampang.com</a> &middot; <a href="https://github.com/adamtpang">GitHub</a> &middot; <a href="/menu.html">the plain menu</a>.</p>
+      <p>Adam Pangelinan: from Guam, currently in Malaysia, dozens of live products, mostly built solo with AI. <a href="https://adampang.com">adampang.com</a> &middot; <a href="https://github.com/adamtpang">GitHub</a> &middot; <a href="/menu">the plain menu</a>.</p>
+      <section aria-labelledby="how-it-works">
+        <h2 id="how-it-works">Choose the smallest useful next step</h2>
+        <p>The paid work is for a founder, small business, or funded team with one specific thing blocking progress. That might be a bug, a launch, an internal tool, an automation, or a small product that has stayed unbuilt because hiring a full team would be too slow or too expensive.</p>
+        <p>The build sprint is the core offer: describe the outcome, get a same-day scope and a clear yes or no, then receive one working thing in about seven days. The buyer owns the code, repository, and deployment. A $750 deposit books the sprint; the remaining $750 is due on delivery, and the remainder is not owed if the agreed scope is missed.</p>
+        <p>If the work is smaller, choose the $199 power hour and build live together. If a completed sprint needs ongoing fixes and one new improvement each month, choose the $750 monthly continuation. Every route shows the whole price before checkout, and every paid route has a direct purchase or contact path.</p>
+        <p><a class="cta" href="https://buy.stripe.com/bJe6oH6UW68BaEwgl3aMU0p">Book a build sprint · $750 deposit</a></p>
+      </section>
     </div>
   </main>
 
   <footer>
     <span>Built by <a href="https://adampang.com">Adam Pangelinan</a></span>
-    <a href="/menu.html">the plain menu</a>
+    <a href="/menu">the plain menu</a>
+    <a href="/about">about</a>
+    <a href="/contact">contact</a>
+    <a href="/privacy">privacy</a>
+    <a href="/terms">terms</a>
     <a href="https://moneymeta.fun">moneymeta.fun</a>
     <a href="https://deathmoney.fyi">deathmoney.fyi</a>
   </footer>
 </div>
 
-<script>
-// Every node is deterministic: no model call, so this can never fail to answer,
-// costs nothing to run, and every path lands on a real price or a real link.
-const LINKS = {
-  powerHour:     "https://buy.stripe.com/4gM14ndjk68B13Wd8RaMU1G",
-  sprintDeposit: "https://buy.stripe.com/bJe6oH6UW68BaEwgl3aMU0p",
-  continuation:  "https://buy.stripe.com/00w7sL7Z0gNf2808SBaMU1d",
-  summonFounding:"https://buy.stripe.com/6oUaEX2EG2Wp9Asgl3aMU1g",
-  playbook:      "https://buy.stripe.com/fZu5kDbbc2WpdQIc4NaMU0J",
-  bindingGoal:   "https://buy.stripe.com/9B69ATgvw68B9As0m5aMU0D",
-  call:          "https://cal.com/adamtpang",
-  email:         "mailto:adamtpang@gmail.com"
-};
-
-const TREE = {
-  root: {
-    reply: "<p>Hey, I'm Adam. I build things fast and I only sell what I can actually deliver.</p><p>What brings you here?</p>",
-    chips: ["build","stuck","earn","spend","hire","who"]
-  },
-
-  build: {
-    say: "I need something built",
-    reply: "<p>Good, that is the main thing I do. How big is it?</p>",
-    chips: ["build_small","build_thing","build_ongoing"]
-  },
-  build_small: {
-    say: "Small, I'm just stuck",
-    reply: "<p><strong>Power hour, <span class='price'>$199</span>.</strong> One live call, we build on your actual problem together, and you keep everything we make. Booked within the week, done in an hour.</p><p>If the hour ships nothing you can point at, it is free.</p>",
-    ctas: [["Book the hour · $199",LINKS.powerHour],["Talk it through first",LINKS.call]],
-    chips: ["build_thing","back"]
-  },
-  build_thing: {
-    say: "One real thing, shipped",
-    reply: "<p><strong>Build sprint, <span class='price'>$1,500</span>.</strong> The one thing you have wanted built, shipped working in about 7 days, live at a URL you own. You own the code, the repo, and the deploy.</p><p>Scoped the same day you ask. A <span class='price'>$750</span> deposit books the slot, the rest is due on delivery, and if I miss the scope we agreed you do not pay the rest.</p>",
-    ctas: [["Book a sprint · $750 deposit",LINKS.sprintDeposit],["Ask me first",LINKS.email]],
-    chips: ["build_ongoing","back"]
-  },
-  build_ongoing: {
-    say: "It needs to stay alive after",
-    reply: "<p><strong>Continuation, <span class='price'>$750/mo</span>.</strong> The thing we shipped stays alive and keeps improving: fixes, updates, and one new improvement a month, without you managing anyone.</p><p>Starts the day your sprint ships. Cancel any time.</p>",
-    ctas: [["Start continuation · $750/mo",LINKS.continuation]],
-    chips: ["build_thing","back"]
-  },
-
-  stuck: {
-    say: "I don't know what to work on",
-    reply: "<p>That is the expensive kind of stuck. Is it the company, or is it you?</p>",
-    chips: ["stuck_company","stuck_life"]
-  },
-  stuck_company: {
-    say: "The company",
-    reply: "<p><strong>Summon.</strong> Your company gets an AI org: eight department heads, a ranked task board, and a loop that names the single constraint holding everything else back. You stay the board, and nothing ships without you.</p><p><span class='price'>$500</span> once to set it up, then <span class='price'>$99/mo</span> locked for life. Cancel any time.</p>",
-    ctas: [["Set up Summon",LINKS.summonFounding],["Talk it through first",LINKS.call]],
-    chips: ["stuck_life","back"]
-  },
-  stuck_life: {
-    say: "Honestly, me",
-    reply: "<p><strong>The binding goal, <span class='price'>$29</span>.</strong> We write the one goal that actually binds your next year, then the single next move, so you stop optimizing things that do not matter.</p><p>If you want the free version first, moneymeta ranks every way to make money by the real data.</p>",
-    ctas: [["Find the binding goal · $29",LINKS.bindingGoal],["Free: the money board","https://moneymeta.fun"]],
-    chips: ["earn","back"]
-  },
-
-  earn: {
-    say: "I want to make more money",
-    reply: "<p>Start free. <strong>moneymeta.fun</strong> ranks every way to make money S to D from public BLS data, with two lenses: what you can start today with no capital, and what has the highest ceiling.</p><p>Only 2 of 90 paths make S tier once you weight barrier to entry. That is the useful part.</p>",
-    ctas: [["Open the board (free)","https://moneymeta.fun"],["The weekly report","https://moneymeta.fun/report"]],
-    chips: ["earn_faster","spend","back"]
-  },
-  earn_faster: {
-    say: "Faster than that",
-    reply: "<p>Then it is a service, not a product. The fastest money is selling a skill you already have to someone who already knows you.</p><p>The <strong>founder playbook, <span class='price'>$29</span></strong>, is how I do that, written down. Or book the hour and we find your version live.</p>",
-    ctas: [["Get the playbook · $29",LINKS.playbook],["Book the hour",LINKS.call]],
-    chips: ["build_thing","back"]
-  },
-
-  spend: {
-    say: "I want to spend less",
-    reply: "<p><strong>deathmoney.fyi</strong>, free. Upload a statement, it reads your real burn and tells you the date your debt hits zero at your current pace, plus the one line to cut to pull that date closer.</p><p>I built it while digging out of $13k in card debt. It is the tool I needed.</p>",
-    ctas: [["Find your number (free)","https://deathmoney.fyi"]],
-    chips: ["earn","back"]
-  },
-
-  hire: {
-    say: "Something about hiring",
-    reply: "<p>Two sides of the same market. Are you hiring, or looking?</p>",
-    chips: ["hire_company","hire_me"]
-  },
-  hire_company: {
-    say: "I'm hiring",
-    reply: "<p><strong>darktalent.tech</strong> scores people on demonstrated public output instead of resumes, so you read five real signals instead of five hundred PDFs.</p>",
-    ctas: [["See darktalent","https://darktalent.tech"]],
-    chips: ["hire_me","back"]
-  },
-  hire_me: {
-    say: "I'm looking for work",
-    reply: "<p><strong>skill.supply</strong>, free and staying free. It writes the job description you should be hired into, then scores real live openings against it. No signup, and the report lives in the link so you own it.</p>",
-    ctas: [["Run your report (free)","https://skill.supply"]],
-    chips: ["hire_company","back"]
-  },
-
-  who: {
-    say: "Who are you?",
-    reply: "<p>Adam Pangelinan. From Guam, currently in Malaysia. I ship a lot: dozens of live products, mostly built solo with AI.</p><p>Straight with you: those products have earned <span class='price'>$147</span> total, from 2 real customers. I am very good at building and I have been bad at asking. This page is me fixing the second part.</p><p>So everything here has a real price and a real date, and nothing claims to be bigger than it is.</p>",
-    ctas: [["My site","https://adampang.com"],["The plain menu","/menu.html"]],
-    chips: ["build","stuck","back"]
-  },
-
-  back: {
-    say: "Show me the other options",
-    reply: "<p>Sure. What do you need?</p>",
-    chips: ["build","stuck","earn","spend","hire","who"]
-  }
-};
-
-const thread = document.getElementById("thread");
-// The static menu above is real fallback content for crawlers and no-JS
-// visitors (raw HTML has no other way to see the offers, since the chat
-// below is rendered entirely by this script). Once JS runs, clear it and
-// hand off to the normal interactive thread so nothing renders twice.
-thread.innerHTML = "";
-
-function el(tag, cls, html){
-  const n = document.createElement(tag);
-  if (cls) n.className = cls;
-  if (html != null) n.innerHTML = html;
-  return n;
-}
-function scrollDown(){
-  requestAnimationFrame(() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" }));
-}
-
-function renderNode(key){
-  const node = TREE[key];
-  if (!node) return;
-
-  const bubble = el("div", "msg them", node.reply);
-
-  if (node.ctas){
-    const row = el("div", "chips");
-    row.style.marginTop = ".6rem";
-    node.ctas.forEach(([label, href], i) => {
-      const a = el("a", i === 0 ? "cta" : "cta ghost", label);
-      a.href = href;
-      if (/^https?:/.test(href)) { a.target = "_blank"; a.rel = "noopener noreferrer"; }
-      row.appendChild(a);
-    });
-    bubble.appendChild(row);
-  }
-  thread.appendChild(bubble);
-
-  if (node.chips && node.chips.length){
-    const row = el("div", "chips");
-    node.chips.forEach(k => {
-      const child = TREE[k];
-      if (!child) return;
-      const b = el("button", "chip", child.say || k);
-      b.type = "button";
-      b.addEventListener("click", () => {
-        row.remove();
-        thread.appendChild(el("div", "msg me", child.say || k));
-        setTimeout(() => renderNode(k), 160);
-        scrollDown();
-      });
-      row.appendChild(b);
-    });
-    thread.appendChild(row);
-  }
-  scrollDown();
-}
-
-renderNode("root");
-</script>
+<script src="/assets/index.js"></script>
 </body>
 </html>
