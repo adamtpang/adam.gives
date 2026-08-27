@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const output = join(root, "public");
-const publicExtensions = new Set([".html", ".jpg", ".txt", ".xml"]);
+const publicExtensions = new Set([".html", ".jpg", ".svg", ".txt", ".xml"]);
 
 rmSync(output, { recursive: true, force: true });
 mkdirSync(output, { recursive: true });

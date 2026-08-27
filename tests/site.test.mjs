@@ -78,6 +78,7 @@ test("homepage structured data identifies the real operator and page", () => {
 test("all public HTML uses one H1 and a valid heading hierarchy", () => {
   for (const file of htmlFiles) {
     const html = read(file);
+    assert.match(html, /<link\s+rel="icon"\s+href="\/favicon\.svg"/i, `${file} must declare the shared favicon`);
     const levels = [...html.matchAll(/<h([1-6])\b/gi)].map((match) => Number(match[1]));
     assert.equal(levels.filter((level) => level === 1).length, 1, `${file} must contain one H1`);
     for (let index = 1; index < levels.length; index += 1) {
