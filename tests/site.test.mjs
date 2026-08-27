@@ -137,6 +137,7 @@ test("all local links resolve and images have accessible alternatives", () => {
 
 test("Vercel config sets restrictive security and MIME headers with complete CSP hashes", () => {
   const config = JSON.parse(read("vercel.json"));
+  assert.deepEqual(config.rewrites, [{ source: "/", destination: "/index.html" }]);
   const global = config.headers.find((entry) => entry.source === "/(.*)");
   assert.ok(global);
   const headers = Object.fromEntries(global.headers.map(({ key, value }) => [key.toLowerCase(), value]));
