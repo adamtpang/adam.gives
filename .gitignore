@@ -5,4 +5,7 @@ AGENTS.md
 CLAUDE.md
 CODEX_CONTINUE_FROM_CLAUDE.md
 .env*
+.env
+!.env.example
+node_modules
 /public/

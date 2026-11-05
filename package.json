@@ -5,5 +5,8 @@
     "build": "npm test && node scripts/build.mjs",
     "lint": "node --check tests/site.test.mjs",
     "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }
